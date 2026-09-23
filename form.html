@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Data Pembeli | Artatix</title>
+<meta name="theme-color" content="#1e348f">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Form data pemesan GLORIFEST FESTARIA 2026 — lengkapi data dan lanjutkan pembayaran di Artatix.">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Data Pembeli | Artatix">
+<meta property="og:description" content="Form data pemesan GLORIFEST FESTARIA 2026.">
+<meta property="og:image" content="banner.png">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+<link rel="prefetch" href="qris.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+[hidden]{display:none!important}
+:root{--navy:#1e348f;--blue:#4353e0;--blue-dark:#3343c9;--ink:#141b3d;--muted:#9aa1b5;--soft:#64708c;--panel:#edf1fb;--line:#e0e5f3;--red:#e5484d;--red-bg:#fdebeb;--hot:#d92638;--hot2:#ff7a18;--green:#0e9f56}
+html{-webkit-text-size-adjust:100%}
+body{font-family:'Poppins',sans-serif;background:#fff;color:var(--ink);transition:opacity .3s ease;-webkit-tap-highlight-color:transparent}
+body.leaving{opacity:0}
+body.lock{overflow:hidden}
+::selection{background:#dfe5fb}
+:focus-visible{outline:3px solid rgba(67,83,224,.35);outline-offset:2px}
+img{display:block}
+button,input,select,textarea{font-family:inherit}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.page{max-width:520px;margin:0 auto;padding:0 20px}
+.ic{width:17px;height:17px;flex:none}
+.ic-fill{fill:#fff}
+.ic-line{fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ═══ HEADER & PROGRESS ═══ */
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{width:40px;height:40px;border-radius:10px}
+.brand strong{font-size:26px;font-weight:800;color:var(--navy);letter-spacing:-.5px}
+.lang{display:inline-flex;align-items:center;gap:8px;background:#f1f3f9;border-radius:999px;padding:9px 16px;font-weight:700;font-size:15px;color:var(--navy)}
+.flag{width:20px;height:20px;border-radius:50%;background:linear-gradient(180deg,#f0483e 0 50%,#fff 50% 100%);box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
+.progress{background:var(--navy);margin:0 -20px;padding:14px 20px 12px}
+.progress-track{height:4px;background:rgba(255,255,255,.18);border-radius:99px;overflow:hidden;margin-bottom:12px}
+.progress-fill{height:100%;background:#fff;border-radius:99px;width:50%} /* 2/4 langkah */
+.steps{list-style:none;display:flex;align-items:center;gap:8px}
+.step{display:flex;align-items:center;gap:8px;flex:1;justify-content:center}
+.dot{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:13px;color:#fff;border:2px solid rgba(255,255,255,.55);flex:none}
+.step.done .dot{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.4)}
+.step.active .dot{background:#fff;color:var(--navy);border-color:#fff}
+.step-label{color:#fff;font-weight:600;font-size:12.5px;white-space:nowrap}
+
+/* ═══ BANNER & TICKER ═══ */
+.banner{width:100%;height:auto;border-radius:22px;margin-top:22px;box-shadow:0 16px 40px rgba(30,52,143,.14);outline:1px solid rgba(30,52,143,.06)}
+.ticker{position:relative;overflow:hidden;margin-top:20px;border-radius:16px;background:linear-gradient(90deg,#d92638,#ff7a18,#d92638);background-size:220% 100%;box-shadow:0 10px 26px rgba(217,38,56,.32),inset 0 0 0 1px rgba(255,255,255,.25);animation:rise .55s cubic-bezier(.2,.7,.3,1) backwards,tickerBg 6s linear infinite}
+.ticker::before,.ticker::after{content:"";position:absolute;top:0;bottom:0;width:34px;z-index:2;pointer-events:none}
+.ticker::before{left:0;background:linear-gradient(90deg,rgba(217,38,56,.95),transparent)}
+.ticker::after{right:0;background:linear-gradient(-90deg,rgba(217,38,56,.95),transparent)}
+.ticker-track{display:flex;width:max-content;padding:10px 0;will-change:transform;animation:tickerMove 15s linear infinite}
+.t-group{display:flex;align-items:center;flex:none}
+.t-item{display:inline-flex;align-items:center;gap:8px;padding:0 22px;color:#fff;font-size:13.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;white-space:nowrap;text-shadow:0 1px 2px rgba(0,0,0,.18)}
+.t-warn{display:inline-block;font-size:15px;animation:blink .85s ease-in-out infinite}
+@keyframes tickerMove{to{transform:translateX(-50%)}}
+@keyframes tickerBg{to{background-position:220% 0}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
+
+.checkout-content{padding-bottom:185px}
+.section-heading{display:inline-flex;align-items:center;gap:9px;background:var(--blue);color:#fff;font-size:16px;font-weight:700;padding:12px 20px;border-radius:999px;margin:24px 0 10px;box-shadow:0 6px 16px rgba(67,83,224,.28)}
+.section-heading svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.note{font-size:12.5px;line-height:1.7;color:var(--soft);margin-bottom:4px}
+
+/* ═══ KARTU ═══ */
+.summary-card{background:var(--panel);border-radius:22px;padding:16px 16px 6px;margin-top:18px;animation:rise .45s cubic-bezier(.2,.7,.3,1) backwards}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.summary-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.summary-row{display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:14px;color:#3c4257;padding:7px 2px}
+.summary-row strong{font-weight:700;color:var(--ink);white-space:nowrap;font-variant-numeric:tabular-nums}
+.summary-total{margin-top:6px;padding:12px 2px 10px;border-top:2px dashed #d7ddf0;font-size:15px;font-weight:600;color:var(--ink)}
+.summary-total strong{font-size:20px;color:var(--navy);font-variant-numeric:tabular-nums}
+
+/* ═══ FIELD ═══ */
+.field{margin-bottom:14px}
+.field:last-child{margin-bottom:10px}
+.field label{display:block;font-size:12.5px;font-weight:600;color:#3c4257;margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;border:2px solid #dde3f6;background:#fff;border-radius:12px;padding:11px 14px;font:inherit;font-size:14px;color:var(--ink);transition:border-color .15s,box-shadow .15s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(67,83,224,.15)}
+.field textarea{resize:vertical;min-height:88px}
+.field select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239aa1b5' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><path d='M6 9l6 6 6-6'/></svg>");background-repeat:no-repeat;background-position:right 14px center;background-size:14px;padding-right:40px}
+input[readonly]{background:#f2f5fc;color:#8b93a8}
+.error{border-color:var(--red)!important;background:#fff8f8!important;animation:shake .3s}
+@keyframes shake{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+/* Anti auto-zoom iOS */
+@media (pointer:coarse){.field input,.field select,.field textarea{font-size:16px}}
+
+.check-row{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:#3c4257;margin-top:10px;cursor:pointer;line-height:1.55}
+.check-row input{width:20px;height:20px;accent-color:var(--blue);flex:none;margin-top:1px;cursor:pointer}
+
+.holder{background:var(--panel);border-radius:22px;padding:16px 16px 2px;margin-top:18px;animation:rise .45s cubic-bezier(.2,.7,.3,1) backwards}
+.holder-head{display:flex;align-items:center;gap:12px}
+.holder-num{width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:700;font-size:14px;flex:none}
+.holder-title{font-size:15px;font-weight:700}
+.holder-sub{font-size:12px;color:var(--muted);font-weight:500}
+.cut{position:relative;border-top:2px dashed #d7ddf0;margin:14px -16px 12px}
+.notch{position:absolute;top:-11px;width:22px;height:22px;border-radius:50%;background:#fff}
+.notch.l{left:-11px}
+.notch.r{right:-11px}
+.same{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:600;color:var(--blue);background:#e7ebfc;border-radius:10px;padding:10px 12px;cursor:pointer;transition:background .15s}
+.same:hover{background:#dde4fa}
+.same input{width:18px;height:18px;accent-color:var(--blue);flex:none;cursor:pointer}
+
+/* ═══ FOOTER ═══ */
+.footer{margin-top:40px;text-align:center;padding-bottom:10px}
+.footer-brand{display:flex;align-items:center;justify-content:center;gap:10px}
+.footer-brand img{width:44px;height:44px;border-radius:10px}
+.footer-brand span{font-size:26px;font-weight:800;color:var(--navy);letter-spacing:-.5px}
+.footer-contact{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:22px}
+.footer-contact a{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);font-weight:600;font-size:16px;transition:color .15s}
+.footer-contact a:hover{color:var(--blue)}
+.f-ico{width:34px;height:34px;border-radius:50%;background:var(--blue);display:grid;place-items:center;flex:none}
+.footer-sep{border:0;border-top:1px solid #e7eaf3;margin:26px 0 18px}
+.footer-copy{font-size:14px;color:var(--muted);font-weight:500}
+
+/* ═══ STICKY & TOMBOL (bersih, tanpa efek terbang) ═══ */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid #eef0f7;box-shadow:0 -8px 24px rgba(23,37,84,.08);padding-bottom:env(safe-area-inset-bottom)}
+.sticky::before{content:"";position:absolute;top:-1px;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent 10%,#4353e0 50%,transparent 90%)}
+.sticky-inner{max-width:520px;margin:0 auto;padding:12px 20px 14px}
+.p-row{display:flex;align-items:center;justify-content:space-between}
+.p-label{font-size:15.5px;font-weight:600;color:#3c4257}
+.p-price{font-size:23px;font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums}
+.primary{margin-top:12px;width:100%;border:0;border-radius:14px;padding:15px;font-size:17px;font-weight:700;color:#fff;background:linear-gradient(180deg,#4d5ce8,#4353e0);box-shadow:0 8px 20px rgba(67,83,224,.32);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:transform .15s,box-shadow .2s,opacity .2s;touch-action:manipulation;-webkit-user-select:none;user-select:none}
+.primary svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
+.primary:disabled{background:#aeb9f0;box-shadow:none;cursor:not-allowed}
+.primary:not(:disabled):hover{box-shadow:0 10px 24px rgba(67,83,224,.42)}
+.primary:not(:disabled):hover svg{transform:translateX(3px)}
+.primary:not(:disabled):active{transform:scale(.99)}
+
+/* ═══ LOADING & TOAST ═══ */
+.loading{position:fixed;inset:0;z-index:80;display:grid;place-items:center;background:rgba(20,27,61,.45);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
+.loading.active{opacity:1;visibility:visible}
+.loading-box{background:#fff;border-radius:18px;padding:26px 34px;text-align:center;box-shadow:0 20px 50px rgba(20,27,61,.25)}
+.spinner{width:44px;height:44px;border-radius:50%;border:4px solid #dfe4f6;border-top-color:var(--blue);animation:spin .8s linear infinite;margin:0 auto 14px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-box strong{font-size:15px}
+.loading-box p{font-size:12px;color:#748093;margin-top:8px}
+.toast{position:fixed;left:50%;bottom:150px;transform:translate(-50%,14px) scale(.97);z-index:90;background:#1c2440;color:#fff;font-size:14px;font-weight:500;padding:11px 18px;border-radius:12px;max-width:calc(100vw - 40px);text-align:center;opacity:0;pointer-events:none;box-shadow:0 12px 30px rgba(0,0,0,.28);transition:opacity .25s,transform .25s}
+.toast.show{opacity:1;transform:translate(-50%,0) scale(1)}
+
+@media (max-width:430px){.step-label{display:none}.step.active .step-label{display:inline}.brand strong{font-size:22px}.t-item{padding:0 14px;font-size:12px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="page">
+<header class="topbar"><a class="brand" href="index.html" aria-label="Artatix beranda"><img src="logo.png" alt="" width="40" height="40" decoding="async"><strong>Artatix</strong></a><span class="lang"><span class="flag" aria-hidden="true"></span>ID</span></header>
+<nav class="progress" aria-label="Langkah pemesanan"><div class="progress-track"><div class="progress-fill"></div></div><ol class="steps"><li class="step done"><span class="dot">✓</span><span class="step-label">Pilih Kategori</span></li><li class="step active" aria-current="step"><span class="dot">2</span><span class="step-label">Data Pembeli</span></li><li class="step"><span class="dot">3</span><span class="step-label">Pembayaran</span></li><li class="step"><span class="dot">4</span><span class="step-label">E-Ticket</span></li></ol></nav>
+<img class="banner" src="banner.png" alt="GLORIFEST FESTARIA 2026 — 10 Oktober 2026, SMA Global Mandiri Cibubur" width="1400" height="520" fetchpriority="high" decoding="async">
+
+<!-- 🚨 TICKER ANIMASI: TIKET HAMPIR SOLD OUT -->
+<aside class="ticker" aria-label="Peringatan stok tiket">
+<p class="sr-only">Peringatan: tiket hampir sold out. Selesaikan pemesananmu sebelum kehabisan.</p>
+<div class="ticker-track" aria-hidden="true">
+<div class="t-group">
+<span class="t-item"><span class="t-warn">⚠️</span>TIKET HAMPIR SOLD OUT</span>
+<span class="t-item">🔒 SELESAIKAN PEMESANANMU</span>
+<span class="t-item">🔥 STOK TERBATAS</span>
+</div>
+<div class="t-group">
+<span class="t-item"><span class="t-warn">⚠️</span>TIKET HAMPIR SOLD OUT</span>
+<span class="t-item">🔒 SELESAIKAN PEMESANANMU</span>
+<span class="t-item">🔥 STOK TERBATAS</span>
+</div>
+</div>
+</aside>
+
+<main class="checkout-content">
+<h1 class="section-heading"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Data Pembeli</h1>
+<p class="note">Pastikan data sesuai identitas. Data pesanan disimpan terlebih dahulu di perangkat agar alur tetap berjalan meskipun layanan pengiriman Formspree atau EmailJS sedang gagal.</p>
+<section class="summary-card"><div class="summary-title">Ringkasan Pesanan</div><div id="summaryRows"></div><div class="summary-row summary-total"><span>Total</span><strong id="totalBayar">Rp0</strong></div></section>
+
+<form id="buyerForm" novalidate>
+<section class="summary-card"><div class="summary-title">Data Pemesan</div>
+<div class="field"><label for="nama">Nama Lengkap</label><input id="nama" type="text" autocomplete="name" enterkeyhint="next" maxlength="100" placeholder="Masukkan nama lengkap"></div>
+<div class="field"><label for="identitas">Jenis Identitas</label><select id="identitas"><option value="">Pilih jenis identitas</option><option>KTP</option><option>SIM</option><option>Paspor</option><option>Kartu Pelajar</option></select></div>
+<div class="field"><label for="nomorId">Nomor Identitas</label><input id="nomorId" type="text" autocomplete="off" spellcheck="false" enterkeyhint="next" maxlength="40" placeholder="Masukkan nomor identitas"></div>
+<div class="field"><label for="email">E-mail Aktif</label><input id="email" type="email" inputmode="email" autocomplete="email" spellcheck="false" autocapitalize="none" enterkeyhint="next" maxlength="120" placeholder="contoh@email.com"></div>
+<div class="field"><label for="wa">No. WhatsApp Aktif</label><input id="wa" type="tel" inputmode="tel" autocomplete="tel" spellcheck="false" enterkeyhint="done" maxlength="20" placeholder="08xxxxxxxxxx"></div>
+<div class="field"><label for="alamat">Alamat / Tempat Tinggal</label><textarea id="alamat" autocomplete="street-address" maxlength="500" placeholder="Masukkan alamat lengkap"></textarea></div>
+</section>
+<section id="holderContainer" aria-label="Data pemegang tiket"></section>
+<section class="summary-card"><div class="summary-title">Persetujuan</div><label class="check-row"><input type="checkbox" id="setuju1"><span>Data yang saya isi adalah benar dan dapat dipertanggungjawabkan.</span></label><label class="check-row"><input type="checkbox" id="setuju2"><span>Saya menyetujui syarat dan ketentuan acara serta kebijakan privasi.</span></label></section>
+</form>
+
+<footer class="footer"><div class="footer-brand"><img src="logo.png" alt="" width="44" height="44" loading="lazy" decoding="async"><span>Artatix</span></div><div class="footer-contact"><a href="tel:+6282137676220"><span class="f-ico"><svg class="ic ic-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.85 21 3 13.15 3 3a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2Z"/></svg></span>+62 821-3767-6220</a><a href="mailto:cs@artatix.co.id"><span class="f-ico"><svg class="ic ic-line" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>cs@artatix.co.id</a></div><hr class="footer-sep"><p class="footer-copy">© 2026 Artatix. Hak Cipta Dilindungi.</p></footer>
+</main>
+</div>
+<div class="sticky"><div class="sticky-inner">
+<div class="p-row" aria-live="polite"><span class="p-label">Total Pembayaran</span><strong class="p-price" id="stickyTotal">Rp0</strong></div>
+<button class="primary" id="lanjut" type="button"><span>Lanjut ke Pembayaran</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+</div></div>
+<div class="loading" id="loading"><div class="loading-box"><div class="spinner"></div><strong>Menyimpan Pesanan</strong><p>Menyiapkan data checkout...</p></div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="event-data.js"></script>
+<script>
+(() => {
+  'use strict';
+
+  const EVENT = window.EVENT_CONFIG && typeof window.EVENT_CONFIG === 'object' ? window.EVENT_CONFIG : { title: 'GLORIFEST "FESTARIA 2026"', slug: 'glorifest-festaria-2026' };
+  /* Key TIDAK diubah → kompatibel tiket.html & qris.html */
+  const KEY = { items: 'gf_checkout_items_v1', draft: 'gf_draft_v1', order: 'gf_order_v1', orderId: 'gf_order_id' };
+  const DEST = 'qris.html';
+
+  const $ = id => document.getElementById(id);
+  const nf = new Intl.NumberFormat('id-ID');
+  const fmt = n => 'Rp' + nf.format(Math.round(n));
+  const el = (tag, cls, text) => {
+    const node = document.createElement(tag);
+    if (cls) node.className = cls;
+    if (text !== undefined) node.textContent = text;
+    return node;
+  };
+
+  let items = [];
+  try {
+    const raw = JSON.parse(localStorage.getItem(KEY.items) || '[]');
+    if (Array.isArray(raw)) {
+      items = raw.filter(i => i && Number.isInteger(Number(i.qty)) && Number(i.qty) > 0 && Number.isFinite(Number(i.harga)) && Number(i.harga) >= 0);
+    }
+  } catch (error) {}
+
+  let total = 0;
+  let totalQty = 0;
+  items.forEach(i => { total += Number(i.qty) * Number(i.harga); totalQty += Number(i.qty); });
+
+  if (!items.length || totalQty < 1) {
+    location.replace('tiket.html');
+    return;
+  }
+
+  const reduceMotion = Boolean(window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+
+  /* ═══ COUNT-UP TOTAL ═══ */
+  const countUp = (elm, target) => {
+    if (reduceMotion) { elm.textContent = fmt(target); return; }
+    const t0 = performance.now(), dur = 700;
+    const step = now => {
+      const p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+      elm.textContent = fmt(Math.round(target * e));
+      if (p < 1) requestAnimationFrame(step);
+      else elm.textContent = fmt(target);
+    };
+    requestAnimationFrame(step);
+  };
+  countUp($('totalBayar'), total);
+  countUp($('stickyTotal'), total);
+
+  const rows = $('summaryRows');
+  const rowsFrag = document.createDocumentFragment();
+  items.forEach(i => {
+    const row = el('div', 'summary-row');
+    row.appendChild(el('span', null, i.nama + ' (' + Number(i.qty) + 'x)'));
+    row.appendChild(el('strong', null, fmt(Number(i.qty) * Number(i.harga))));
+    rowsFrag.appendChild(row);
+  });
+  rows.appendChild(rowsFrag);
+
+  const nama = $('nama'), identitas = $('identitas'), nomorId = $('nomorId'), email = $('email'), wa = $('wa'), alamat = $('alamat');
+  const holderContainer = $('holderContainer');
+  const btn = $('lanjut'), loading = $('loading'), toast = $('toast');
+  const setuju1 = $('setuju1'), setuju2 = $('setuju2');
+  const form = $('buyerForm');
+
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  const phoneRe = /^(?:\+62|62|0)8\d{7,12}$/;
+  const DRAFT_IDS = ['nama', 'identitas', 'nomorId', 'email', 'wa', 'alamat'];
+  const BUYER_SYNC = ['nama', 'email', 'wa'];
+
+  let toastTimer = null, draftTimer = null, leaving = false;
+
+  const notify = msg => {
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 2600);
+  };
+
+  const holders = [];
+  items.forEach(item => {
+    const q = Number(item.qty);
+    for (let n = 0; n < q; n++) holders.push({ ticketId: item.id, ticketName: item.nama, number: holders.length + 1 });
+  });
+
+  /* Label terhubung ke input via for/id unik */
+  let holderSeq = 1;
+  const holderField = (labelText, cls, type, max, ph, mode) => {
+    const id = cls + '-' + (++holderSeq);
+    const wrap = el('div', 'field');
+    const labelEl = el('label', null, labelText);
+    labelEl.htmlFor = id;
+    const input = document.createElement('input');
+    input.type = type;
+    input.className = cls;
+    input.id = id;
+    input.maxLength = max;
+    input.placeholder = ph;
+    input.autocomplete = 'off';
+    input.spellcheck = false;
+    if (mode) input.inputMode = mode;
+    input.setAttribute('enterkeyhint', 'next');
+    if (cls === 'h-email') input.autocapitalize = 'none';
+    wrap.appendChild(labelEl);
+    wrap.appendChild(input);
+    return wrap;
+  };
+
+  const holderCards = [];
+
+  const holderTemplate = h => {
+    const card = el('div', 'holder');
+    card.dataset.ticket = h.ticketId;
+    card.dataset.number = h.number;
+    const head = el('div', 'holder-head');
+    head.appendChild(el('span', 'holder-num', String(h.number)));
+    const box = el('div');
+    box.appendChild(el('div', 'holder-title', 'Data Pemegang Tiket #' + h.number));
+    box.appendChild(el('div', 'holder-sub', h.ticketName));
+    head.appendChild(box);
+    card.appendChild(head);
+    const cut = el('div', 'cut');
+    cut.appendChild(el('span', 'notch l'));
+    cut.appendChild(el('span', 'notch r'));
+    card.appendChild(cut);
+    const same = el('label', 'same');
+    const cb = document.createElement('input');
+    cb.type = 'checkbox';
+    cb.className = 'same-owner';
+    same.appendChild(cb);
+    same.appendChild(document.createTextNode('Sama dengan Data Pemesan'));
+    card.appendChild(same);
+    card.appendChild(holderField('Nama Lengkap', 'h-name', 'text', 100, 'Nama pemegang tiket', 'text'));
+    card.appendChild(holderField('E-mail Aktif', 'h-email', 'email', 120, 'email@contoh.com', 'email'));
+    card.appendChild(holderField('No. WhatsApp', 'h-wa', 'tel', 20, '08xxxxxxxxxx', 'tel'));
+    return card;
+  };
+
+  const hFrag = document.createDocumentFragment();
+  holders.slice(1).forEach(h => {
+    const card = holderTemplate(h);
+    holderCards.push(card);
+    hFrag.appendChild(card);
+  });
+  holderContainer.appendChild(hFrag);
+
+  document.querySelectorAll('.summary-card').forEach((c, i) => { c.style.animationDelay = i * 60 + 'ms'; });
+  holderCards.forEach((c, i) => { c.style.animationDelay = 60 + i * 60 + 'ms'; });
+
+  const OWNER_MAP = { 'h-name': nama, 'h-email': email, 'h-wa': wa };
+
+  const syncOwner = card => {
+    const on = card.querySelector('.same-owner').checked;
+    Object.keys(OWNER_MAP).forEach(cls => {
+      const input = card.querySelector('.' + cls);
+      if (!input) return;
+      input.readOnly = on;
+      if (on) input.value = OWNER_MAP[cls].value;
+    });
+  };
+
+  const syncCheckedOwners = () => {
+    holderCards.forEach(card => {
+      if (card.querySelector('.same-owner').checked) syncOwner(card);
+    });
+  };
+
+  holderContainer.addEventListener('change', event => {
+    const t = event.target;
+    if (t && t.classList && t.classList.contains('same-owner')) {
+      const card = t.closest('.holder');
+      if (card) syncOwner(card);
+    }
+  });
+
+  const clearError = t => {
+    if (t && t.classList && t.classList.contains('error')) {
+      t.classList.remove('error');
+      t.removeAttribute('aria-invalid');
+    }
+  };
+
+  const collectDraft = () => ({
+    buyer: DRAFT_IDS.reduce((acc, k) => { acc[k] = $(k).value; return acc; }, {}),
+    holders: holderCards.map(card => ({
+      number: Number(card.dataset.number),
+      ticketId: card.dataset.ticket,
+      checked: card.querySelector('.same-owner').checked,
+      nama: card.querySelector('.h-name').value,
+      email: card.querySelector('.h-email').value,
+      wa: card.querySelector('.h-wa').value
+    }))
+  });
+
+  const saveDraft = () => {
+    clearTimeout(draftTimer);
+    draftTimer = setTimeout(() => {
+      try { localStorage.setItem(KEY.draft, JSON.stringify(collectDraft())); } catch (error) {}
+    }, 250);
+  };
+
+  try {
+    const saved = JSON.parse(localStorage.getItem(KEY.draft) || 'null');
+    if (saved) {
+      const buyerData = saved.buyer || saved;
+      DRAFT_IDS.forEach(k => {
+        const f = $(k);
+        if (f && typeof buyerData[k] === 'string') f.value = buyerData[k];
+      });
+      const savedHolders = Array.isArray(saved.holders) ? saved.holders : [];
+      holderCards.forEach(card => {
+        const rec = savedHolders.find(h => h && Number(h.number) === Number(card.dataset.number) && h.ticketId === card.dataset.ticket);
+        if (!rec) return;
+        card.querySelector('.h-name').value = typeof rec.nama === 'string' ? rec.nama : '';
+        card.querySelector('.h-email').value = typeof rec.email === 'string' ? rec.email : '';
+        card.querySelector('.h-wa').value = typeof rec.wa === 'string' ? rec.wa : '';
+        if (rec.checked) {
+          card.querySelector('.same-owner').checked = true;
+          syncOwner(card);
+        }
+      });
+    }
+  } catch (error) {}
+
+  const isDraftField = t =>
+    (t instanceof HTMLInputElement || t instanceof HTMLSelectElement || t instanceof HTMLTextAreaElement) &&
+    (DRAFT_IDS.includes(t.id) || holderContainer.contains(t));
+
+  document.addEventListener('input', event => {
+    const t = event.target;
+    clearError(t);
+    if (BUYER_SYNC.includes(t.id)) syncCheckedOwners();
+    if (isDraftField(t)) saveDraft();
+  });
+
+  document.addEventListener('change', event => {
+    const t = event.target;
+    clearError(t);
+    if (isDraftField(t)) saveDraft();
+  });
+
+  const valid = () => {
+    let ok = true;
+    const fail = f => { f.classList.add('error'); f.setAttribute('aria-invalid', 'true'); ok = false; };
+    if (!nama.value.trim()) fail(nama);
+    if (!identitas.value) fail(identitas);
+    if (!nomorId.value.trim()) fail(nomorId);
+    if (!email.value.trim()) fail(email);
+    else if (!emailRe.test(email.value.trim())) fail(email);
+    if (!wa.value.trim()) fail(wa);
+    else if (!phoneRe.test(wa.value.replace(/[\s-]/g, ''))) fail(wa);
+    if (!alamat.value.trim()) fail(alamat);
+    holderCards.forEach(card => {
+      const hn = card.querySelector('.h-name'), he = card.querySelector('.h-email'), hw = card.querySelector('.h-wa');
+      if (!hn.value.trim()) fail(hn);
+      if (!he.value.trim()) fail(he);
+      else if (!emailRe.test(he.value.trim())) fail(he);
+      if (!hw.value.trim()) fail(hw);
+      else if (!phoneRe.test(hw.value.replace(/[\s-]/g, ''))) fail(hw);
+    });
+    return ok;
+  };
+
+  const collectHolders = () => {
+    const out = [];
+    if (holders.length) {
+      out.push({ number: 1, ticketId: holders[0].ticketId, ticketName: holders[0].ticketName, nama: nama.value.trim(), email: email.value.trim(), wa: wa.value.trim() });
+    }
+    holderCards.forEach(card => {
+      out.push({
+        number: Number(card.dataset.number),
+        ticketId: card.dataset.ticket,
+        ticketName: card.querySelector('.holder-sub').textContent,
+        nama: card.querySelector('.h-name').value.trim(),
+        email: card.querySelector('.h-email').value.trim(),
+        wa: card.querySelector('.h-wa').value.trim()
+      });
+    });
+    return out;
+  };
+
+  const timeoutFetch = (url, options, ms) => {
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), ms);
+    return fetch(url, Object.assign({}, options, { signal: ctrl.signal })).finally(() => clearTimeout(timer));
+  };
+
+  const ticketSummary = order => order.cart.items.map(i => i.jenis + ' (x' + i.qty + ')').join(', ');
+
+  const sendExternal = order => {
+    const tasks = [];
+    if (EVENT.formspree) {
+      tasks.push(timeoutFetch(EVENT.formspree, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          event: EVENT.title,
+          nama: order.nama,
+          identitas: order.identitas,
+          nomor_id: order.nomorId,
+          email: order.email,
+          whatsapp: order.wa,
+          alamat: order.alamat,
+          jenis_tiket: ticketSummary(order),
+          jumlah_tiket: order.cart.totalQty,
+          total_bayar: order.cart.totalPrice,
+          pemegang_tiket: order.holders
+        })
+      }, 4000).catch(() => null));
+    }
+    const cfg = EVENT.emailjs || {};
+    if (cfg.serviceId && cfg.templateId && cfg.publicKey) {
+      tasks.push(timeoutFetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          service_id: cfg.serviceId,
+          template_id: cfg.templateId,
+          user_id: cfg.publicKey,
+          template_params: {
+            event: EVENT.title,
+            nama: order.nama,
+            email: order.email,
+            whatsapp: order.wa,
+            total: fmt(order.cart.totalPrice),
+            jenis_tiket: ticketSummary(order)
+          }
+        })
+      }, 4000).catch(() => null));
+    }
+    return tasks.length ? Promise.all(tasks) : Promise.resolve();
+  };
+
+  const buildOrder = () => ({
+    version: EVENT.slug,
+    createdAt: new Date().toISOString(),
+    nama: nama.value.trim(),
+    identitas: identitas.value,
+    nomorId: nomorId.value.trim(),
+    email: email.value.trim(),
+    wa: wa.value.trim(),
+    alamat: alamat.value.trim(),
+    holders: collectHolders(),
+    cart: {
+      items: items.map(i => ({ jenis: i.nama, qty: Number(i.qty), harga: Number(i.harga), ticketId: i.id })),
+      totalQty: totalQty,
+      totalPrice: total
+    }
+  });
+
+  const resetUi = () => {
+    leaving = false;
+    btn.disabled = false;
+    loading.classList.remove('active');
+    document.body.classList.remove('leaving', 'lock');
+  };
+
+  const handleSubmit = () => {
+    if (btn.disabled || leaving) return;
+    if (!valid()) {
+      notify('Harap lengkapi data yang ditandai merah');
+      const first = document.querySelector('.error');
+      if (first) first.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
+      return;
+    }
+    if (!setuju1.checked || !setuju2.checked) {
+      notify('Harap centang seluruh kotak persetujuan.');
+      return;
+    }
+    leaving = true;
+    btn.disabled = true;
+    loading.classList.add('active');
+    document.body.classList.add('lock');
+
+    const order = buildOrder();
+    try {
+      localStorage.setItem(KEY.order, JSON.stringify(order));
+      localStorage.setItem(KEY.orderId, 'GF-' + Date.now().toString(36).toUpperCase());
+    } catch (error) {
+      resetUi();
+      notify('Data tidak dapat disimpan di perangkat. Cek ruang penyimpanan browser lalu coba lagi.');
+      return;
+    }
+
+    Promise.resolve(sendExternal(order)).catch(() => {}).finally(() => {
+      document.body.classList.add('leaving');
+      setTimeout(() => window.location.assign(DEST), reduceMotion ? 0 : 300);
+    });
+  };
+
+  /* Enter untuk lanjut */
+  form.addEventListener('keydown', event => {
+    if (event.key === 'Enter' && event.target instanceof HTMLInputElement && event.target.type !== 'checkbox' && !event.repeat) {
+      event.preventDefault();
+      handleSubmit();
+    }
+  });
+  btn.addEventListener('click', handleSubmit);
+
+  window.addEventListener('pageshow', event => {
+    if (event.persisted && leaving) resetUi();
+  });
+})();
+</script>
+</body>
+                                                                                   </html>
