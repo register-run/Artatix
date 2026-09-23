@@ -72,7 +72,7 @@ a:focus-visible{outline:3px solid #7ea2ff;outline-offset:3px;border-radius:8px}
 .lang-flag{font-size:13px;line-height:1}
 
 .hero{position:relative;background:#0d2d8c;overflow:hidden}
-.banner{width:100%;height:auto;display:block;image-rendering:auto}
+.banner{width:100%;height:auto;display:block}
 
 .content{padding:20px 16px 150px}
 .badge{
@@ -208,10 +208,16 @@ a:focus-visible{outline:3px solid #7ea2ff;outline-offset:3px;border-radius:8px}
 .footer{margin-top:38px;padding-top:22px;border-top:1px solid var(--line);text-align:center}
 .footer-brand{display:flex;align-items:center;justify-content:center}
 .brand-mark{
-  display:inline-flex;align-items:center;justify-content:center;padding:8px 12px;
-  border-radius:10px;background:linear-gradient(135deg,#0b2f93,#2f5bea)
+  display:inline-flex;align-items:center;justify-content:center;
+  min-width:78px;min-height:38px;padding:7px 12px;
+  border-radius:12px;background:linear-gradient(135deg,#0b2f93,#2f5bea);
+  box-shadow:0 6px 18px rgba(20,52,145,.16);
+  overflow:hidden
 }
-.brand-mark img{height:14px;width:auto}
+.brand-mark img{
+  display:block;width:auto;height:18px;max-width:110px;
+  object-fit:contain;object-position:center
+}
 .footer-contact{margin-top:10px;display:flex;flex-wrap:wrap;justify-content:center;gap:4px 14px;font-size:12px;font-weight:600}
 .footer-contact a{color:#4a5468}
 .footer-sep{width:46px;height:3px;margin:16px auto 12px;border-radius:2px;background:var(--brand);opacity:.18}
@@ -229,7 +235,7 @@ a:focus-visible{outline:3px solid #7ea2ff;outline-offset:3px;border-radius:8px}
 .purchase-label{display:block;font-size:10px;font-weight:600;color:#4d586c}
 .purchase-price{display:block;font-size:18px;font-weight:800;color:#2853c6;line-height:1.3}
 .buy{
-  position:relative;overflow:hidden;flex:1;min-height:48px;padding:12px 20px;
+  position:relative;overflow:hidden;flex:0 0 auto;min-width:132px;min-height:46px;padding:11px 16px;
   border-radius:12px;background:linear-gradient(135deg,#3967ef,#2b58d9);
   color:#fff;text-align:center;font-size:13.5px;font-weight:800;
   box-shadow:0 10px 24px rgba(45,88,220,.25)
@@ -247,6 +253,7 @@ a:focus-visible{outline:3px solid #7ea2ff;outline-offset:3px;border-radius:8px}
   .facility-grid{column-gap:14px}
   .facility-card span{font-size:11.5px}
   .sticky{width:calc(100% - 14px);padding-left:12px}
+  .buy{min-width:122px;padding-left:13px;padding-right:13px;font-size:12.5px}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -743,15 +750,13 @@ a:focus-visible{outline:3px solid #7ea2ff;outline-offset:3px;border-radius:8px}
         const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
         buyBtn.classList.add('is-loading');
         buyBtn.setAttribute('aria-busy', 'true');
-        document.documentElement.classList.add('is-leaving');
 
         setTimeout(() => { window.location.href = 'tiket.html'; }, reduceMotion ? 0 : 180);
       });
 
       window.addEventListener('pageshow', event => {
         if (event.persisted) {
-          document.documentElement.classList.remove('is-leaving');
-          buyBtn.classList.remove('is-loading');
+                    buyBtn.classList.remove('is-loading');
           buyBtn.removeAttribute('aria-busy');
         }
       });
