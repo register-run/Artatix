@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Pembayaran QRIS | Artatix</title>
+<meta name="theme-color" content="#1e348f">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Pembayaran QRIS GLORIFEST FESTARIA 2026 — scan, bayar, unggah bukti, dan amankan tiketmu di Artatix.">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pembayaran QRIS | Artatix">
+<meta property="og:description" content="Pembayaran QRIS GLORIFEST FESTARIA 2026.">
+<meta property="og:image" content="banner.png">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+<link rel="prefetch" href="success.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+[hidden]{display:none!important}
+:root{--navy:#1e348f;--blue:#4353e0;--ink:#141b3d;--muted:#9aa1b5;--soft:#657286;--panel:#edf1fb;--line:#e0e5f3;--red:#e5484d;--red-bg:#fdebeb;--green:#0e9f56;--hot:#d92638;--hot2:#ff7a18}
+html{-webkit-text-size-adjust:100%}
+body{font-family:'Poppins',sans-serif;background:#fff;color:var(--ink);transition:opacity .3s ease;-webkit-tap-highlight-color:transparent}
+body.leaving{opacity:0}
+body.lock{overflow:hidden}
+::selection{background:#dfe5fb}
+:focus-visible{outline:3px solid rgba(67,83,224,.35);outline-offset:2px}
+img{display:block}
+button{font-family:inherit}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.page{max-width:520px;margin:0 auto;padding:0 20px}
+.ic{width:17px;height:17px;flex:none}
+.ic-fill{fill:#fff}
+.ic-line{fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ═══ HEADER & PROGRESS ═══ */
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{width:40px;height:40px;border-radius:10px}
+.brand strong{font-size:26px;font-weight:800;color:var(--navy);letter-spacing:-.5px}
+.lang{display:inline-flex;align-items:center;gap:8px;background:#f1f3f9;border-radius:999px;padding:9px 16px;font-weight:700;font-size:15px;color:var(--navy)}
+.flag{width:20px;height:20px;border-radius:50%;background:linear-gradient(180deg,#f0483e 0 50%,#fff 50% 100%);box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
+.progress{background:var(--navy);margin:0 -20px;padding:14px 20px 12px}
+.progress-track{height:4px;background:rgba(255,255,255,.18);border-radius:99px;overflow:hidden;margin-bottom:12px}
+.progress-fill{height:100%;background:#fff;border-radius:99px;width:75%} /* 3/4 langkah */
+.steps{list-style:none;display:flex;align-items:center;gap:8px}
+.step{display:flex;align-items:center;gap:8px;flex:1;justify-content:center}
+.dot{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:13px;color:#fff;border:2px solid rgba(255,255,255,.55);flex:none}
+.step.done .dot{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.4)}
+.step.active .dot{background:#fff;color:var(--navy);border-color:#fff}
+.step-label{color:#fff;font-weight:600;font-size:12.5px;white-space:nowrap}
+
+/* ═══ 🚨 TICKER: TIKET HAMPIR SOLD OUT ═══ */
+.ticker{position:relative;overflow:hidden;margin-top:20px;border-radius:16px;background:linear-gradient(90deg,#d92638,#ff7a18,#d92638);background-size:220% 100%;box-shadow:0 10px 26px rgba(217,38,56,.32),inset 0 0 0 1px rgba(255,255,255,.25);animation:rise .55s cubic-bezier(.2,.7,.3,1) backwards,tickerBg 6s linear infinite}
+.ticker::before,.ticker::after{content:"";position:absolute;top:0;bottom:0;width:34px;z-index:2;pointer-events:none}
+.ticker::before{left:0;background:linear-gradient(90deg,rgba(217,38,56,.95),transparent)}
+.ticker::after{right:0;background:linear-gradient(-90deg,rgba(217,38,56,.95),transparent)}
+.ticker-track{display:flex;width:max-content;padding:10px 0;will-change:transform;animation:tickerMove 15s linear infinite}
+.t-group{display:flex;align-items:center;flex:none}
+.t-item{display:inline-flex;align-items:center;gap:8px;padding:0 22px;color:#fff;font-size:13.5px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;white-space:nowrap;text-shadow:0 1px 2px rgba(0,0,0,.18)}
+.t-warn{display:inline-block;font-size:15px;animation:blink .85s ease-in-out infinite}
+@keyframes tickerMove{to{transform:translateX(-50%)}}
+@keyframes tickerBg{to{background-position:220% 0}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
+
+.checkout-content{padding-bottom:44px}
+.section-heading{display:inline-flex;align-items:center;gap:9px;background:var(--blue);color:#fff;font-size:16px;font-weight:700;padding:12px 20px;border-radius:999px;margin:24px 0 16px;box-shadow:0 6px 16px rgba(67,83,224,.28)}
+.section-heading svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ═══ KARTU ═══ */
+.summary-card{background:var(--panel);border-radius:22px;padding:16px;margin-top:16px;animation:rise .45s cubic-bezier(.2,.7,.3,1) backwards}
+main section:nth-of-type(2){animation-delay:.05s}
+main section:nth-of-type(3){animation-delay:.1s}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.summary-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:12px}
+.meta-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.meta{background:#fff;border-radius:14px;padding:11px 13px}
+.meta.wide{grid-column:1/-1}
+.meta span{display:block;font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.meta strong{display:block;font-size:13.5px;font-weight:700;margin-top:3px;word-break:break-word;font-variant-numeric:tabular-nums}
+.meta.total strong{color:var(--navy);font-size:16px}
+
+/* ═══ KARTU QRIS ═══ */
+.qris-card{position:relative;overflow:hidden;background:linear-gradient(150deg,#16255f 0%,var(--navy) 40%,#3a4bd6 100%);border-radius:22px;padding:16px;margin-top:16px;animation:rise .45s cubic-bezier(.2,.7,.3,1) backwards;box-shadow:0 14px 34px rgba(22,37,95,.28)}
+.qris-card::before,.qris-card::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.qris-card::before{width:190px;height:190px;background:rgba(255,255,255,.08);top:-80px;right:-60px}
+.qris-card::after{width:130px;height:130px;background:rgba(255,255,255,.05);bottom:-60px;left:-45px}
+.qris-head{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:2px 2px 12px}
+.qris-badge{display:inline-flex;align-items:center;gap:7px;color:#fff;font-weight:800;font-size:13px;letter-spacing:.14em;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:7px 14px}
+.qris-badge svg{width:14px;height:14px;fill:#ffd166}
+.timer{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.94);color:var(--navy);font-weight:800;font-size:15px;padding:8px 15px;border-radius:999px;font-variant-numeric:tabular-nums;box-shadow:0 4px 12px rgba(10,20,60,.28);transition:background .3s,color .3s}
+.timer svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.timer.urgent{background:var(--red);color:#fff;animation:urgent 1s ease-in-out infinite}
+@keyframes urgent{0%,100%{box-shadow:0 0 0 0 rgba(229,72,77,.55)}50%{box-shadow:0 0 0 9px rgba(229,72,77,0)}}
+.pay-list{position:relative;z-index:1;display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin:0 2px 12px}
+.pay-list span{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);color:#fff;border-radius:999px;padding:4px 11px;font-size:10.5px;font-weight:600}
+.qris-inner{position:relative;z-index:1;background:#fff;border-radius:18px;padding:20px 18px 16px;box-shadow:0 10px 26px rgba(10,20,60,.22);text-align:center}
+.qris-frame{position:relative;width:max-content;max-width:100%;margin:0 auto;padding:12px}
+.qris-img{display:block;width:100%;max-width:240px;height:auto;aspect-ratio:auto 461/475;margin:0 auto;border-radius:10px}
+.corner{position:absolute;width:24px;height:24px;border:3px solid var(--blue)}
+.corner.tl{top:0;left:0;border-right:0;border-bottom:0;border-radius:10px 0 0 0}
+.corner.tr{top:0;right:0;border-left:0;border-bottom:0;border-radius:0 10px 0 0}
+.corner.bl{bottom:0;left:0;border-right:0;border-top:0;border-radius:0 0 0 10px}
+.corner.br{bottom:0;right:0;border-left:0;border-top:0;border-radius:0 0 10px 0}
+.scan-line{position:absolute;left:8px;right:8px;height:3px;border-radius:99px;background:linear-gradient(90deg,transparent,#4353e0 35%,#7c8af5 50%,#4353e0 65%,transparent);opacity:.65;animation:scan 2.8s ease-in-out infinite;pointer-events:none}
+@keyframes scan{0%,100%{top:12px}50%{top:calc(100% - 15px)}}
+.order-chip{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:14px;font-size:12px;color:var(--soft)}
+.order-chip strong{color:var(--navy);font-weight:700;letter-spacing:.02em}
+.chip-copy{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border:0;background:var(--blue);color:#fff;border-radius:8px;cursor:pointer;transition:transform .15s,background .2s;touch-action:manipulation}
+.chip-copy:active{transform:scale(.9)}
+.chip-copy svg,.copy-btn svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.chip-copy.copied,.copy-btn.copied{background:var(--green);box-shadow:0 4px 12px rgba(14,159,86,.35)}
+.amount-box{margin-top:10px;background:#f4f6fd;border:1px solid #dfe4f8;border-radius:16px;padding:14px 16px}
+.amount-box>span{display:block;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.amount-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:4px}
+.amount-row strong{font-size:26px;font-weight:800;color:var(--navy);letter-spacing:-.6px;font-variant-numeric:tabular-nums}
+.copy-btn{display:inline-flex;align-items:center;gap:6px;border:0;background:linear-gradient(135deg,#4d5ce8,#4353e0);color:#fff;font-size:12.5px;font-weight:700;padding:10px 14px;border-radius:11px;cursor:pointer;box-shadow:0 4px 12px rgba(67,83,224,.3);transition:transform .15s,background .2s,box-shadow .2s;touch-action:manipulation;flex:none}
+.copy-btn:active{transform:scale(.95)}
+.pay-steps{margin:16px 0 0;padding:0;list-style:none;display:grid;gap:8px;text-align:left}
+.pay-steps li{display:flex;align-items:flex-start;gap:10px;font-size:12.5px;line-height:1.6;color:var(--soft)}
+.pay-steps li span{flex:none;width:20px;height:20px;border-radius:50%;background:#e7ebfc;color:var(--blue);font-size:11px;font-weight:700;display:grid;place-items:center;margin-top:1px}
+
+/* ═══ UPLOAD ═══ */
+.upload{display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;border:2px dashed #c9d2ee;border-radius:16px;background:#f7f9ff;padding:24px 16px;cursor:pointer;transition:border-color .15s,background .15s,transform .15s;touch-action:manipulation}
+.upload:hover,.upload.drag{border-color:var(--blue);background:#eef1fe}
+.upload.drag{transform:scale(1.01)}
+.upload.kb-focus{border-color:var(--blue);box-shadow:0 0 0 4px rgba(67,83,224,.16)}
+.upload svg{width:34px;height:34px;fill:none;stroke:var(--blue);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;margin-bottom:5px}
+.upload strong{font-size:14px}
+.upload span{font-size:12px;color:var(--muted)}
+.upload span:last-child{font-size:11px}
+/* Input file tersembunyi tapi tetap bisa diakses keyboard */
+.input-file{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.preview{margin-top:14px;background:#f7f9ff;border:1px solid var(--line);border-radius:16px;padding:12px;animation:rise .3s ease backwards}
+.preview img{width:100%;max-height:260px;object-fit:contain;border-radius:10px;background:#fff}
+.preview-row{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:9px}
+.preview-name{font-size:12px;color:var(--soft);word-break:break-all}
+.remove{display:inline-flex;align-items:center;gap:6px;border:0;background:var(--red-bg);color:var(--red);font-size:12px;font-weight:600;padding:7px 12px;border-radius:9px;cursor:pointer;flex:none;transition:transform .15s,background .15s;touch-action:manipulation}
+.remove:hover{background:#fbdedd}
+.remove svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round}
+.remove:active{transform:scale(.94)}
+.check-row{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:#3c4257;margin-top:14px;cursor:pointer;line-height:1.55}
+.check-row input{width:20px;height:20px;accent-color:var(--blue);flex:none;margin-top:1px;cursor:pointer}
+
+/* ═══ TOMBOL KONFIRMASI (bersih, tanpa efek terbang) ═══ */
+.primary{width:100%;margin-top:16px;border:0;border-radius:14px;padding:15px;font-size:17px;font-weight:700;color:#fff;background:linear-gradient(180deg,#4d5ce8,#4353e0);box-shadow:0 8px 20px rgba(67,83,224,.32);cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:transform .15s,box-shadow .2s,opacity .2s;touch-action:manipulation;-webkit-user-select:none;user-select:none}
+.primary svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
+.primary:disabled{background:#aeb9f0;box-shadow:none;cursor:not-allowed}
+.primary:not(:disabled):hover{box-shadow:0 10px 24px rgba(67,83,224,.42)}
+.primary:not(:disabled):hover svg{transform:translateX(3px)}
+.primary:not(:disabled):active{transform:scale(.99)}
+
+.info-box{display:flex;gap:10px;background:#f7f9ff;border:1px solid var(--line);border-radius:14px;padding:13px 14px;font-size:12px;line-height:1.65;color:var(--soft);margin-top:16px}
+.info-box svg{width:16px;height:16px;flex:none;fill:none;stroke:var(--blue);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;margin-top:2px}
+
+/* ═══ FOOTER ═══ */
+.footer{margin-top:40px;text-align:center;padding-bottom:10px}
+.footer-brand{display:flex;align-items:center;justify-content:center;gap:10px}
+.footer-brand img{width:44px;height:44px;border-radius:10px}
+.footer-brand span{font-size:26px;font-weight:800;color:var(--navy);letter-spacing:-.5px}
+.footer-contact{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:22px}
+.footer-contact a{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);font-weight:600;font-size:16px;transition:color .15s}
+.footer-contact a:hover{color:var(--blue)}
+.f-ico{width:34px;height:34px;border-radius:50%;background:var(--blue);display:grid;place-items:center;flex:none}
+.footer-sep{border:0;border-top:1px solid #e7eaf3;margin:26px 0 18px}
+.footer-copy{font-size:14px;color:var(--muted);font-weight:500}
+
+/* ═══ LOADING & TOAST ═══ */
+.loading{position:fixed;inset:0;z-index:80;display:grid;place-items:center;background:rgba(20,27,61,.45);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s}
+.loading.active{opacity:1;visibility:visible}
+.loading-box{background:#fff;border-radius:18px;padding:26px 34px;text-align:center;box-shadow:0 20px 50px rgba(20,27,61,.25)}
+.spinner{width:44px;height:44px;border-radius:50%;border:4px solid #dfe4f6;border-top-color:var(--blue);animation:spin .8s linear infinite;margin:0 auto 14px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-box strong{font-size:15px}
+.loading-box p{font-size:12px;color:#748093;margin-top:8px}
+.toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,14px) scale(.97);z-index:90;background:#1c2440;color:#fff;font-size:14px;font-weight:500;padding:11px 18px;border-radius:12px;max-width:calc(100vw - 40px);text-align:center;opacity:0;pointer-events:none;box-shadow:0 12px 30px rgba(0,0,0,.28);transition:opacity .25s,transform .25s}
+.toast.show{opacity:1;transform:translate(-50%,0) scale(1)}
+
+@media (max-width:430px){.step-label{display:none}.step.active .step-label{display:inline}.brand strong{font-size:22px}.meta-grid{grid-template-columns:1fr}.amount-row strong{font-size:22px}.qris-badge{font-size:11.5px;padding:6px 11px}.timer{font-size:13.5px;padding:7px 12px}.t-item{padding:0 14px;font-size:12px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="page">
+<header class="topbar"><a class="brand" href="index.html" aria-label="Artatix beranda"><img src="logo.png" alt="" width="40" height="40" decoding="async"><strong>Artatix</strong></a><span class="lang"><span class="flag" aria-hidden="true"></span>ID</span></header>
+<nav class="progress" aria-label="Langkah pemesanan"><div class="progress-track"><div class="progress-fill"></div></div><ol class="steps"><li class="step done"><span class="dot">✓</span><span class="step-label">Pilih Kategori</span></li><li class="step done"><span class="dot">✓</span><span class="step-label">Data Pembeli</span></li><li class="step active" aria-current="step"><span class="dot">3</span><span class="step-label">Pembayaran</span></li><li class="step"><span class="dot">4</span><span class="step-label">E-Ticket</span></li></ol></nav>
+
+<!-- 🚨 TICKER ANIMASI: TIKET HAMPIR SOLD OUT -->
+<aside class="ticker" aria-label="Peringatan stok tiket">
+<p class="sr-only">Peringatan: tiket hampir sold out. Selesaikan pembayaran sebelum waktu habis.</p>
+<div class="ticker-track" aria-hidden="true">
+<div class="t-group">
+<span class="t-item"><span class="t-warn">⚠️</span>TIKET HAMPIR SOLD OUT</span>
+<span class="t-item">⏱ SELESAIKAN PEMBAYARAN</span>
+<span class="t-item">🔥 AMANKAN TIKETMU SEKARANG</span>
+</div>
+<div class="t-group">
+<span class="t-item"><span class="t-warn">⚠️</span>TIKET HAMPIR SOLD OUT</span>
+<span class="t-item">⏱ SELESAIKAN PEMBAYARAN</span>
+<span class="t-item">🔥 AMANKAN TIKETMU SEKARANG</span>
+</div>
+</div>
+</aside>
+
+<main class="checkout-content">
+<h1 class="section-heading"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3z"/><path d="M21 14v.01M17.5 17.5v.01M21 21v.01M14 21v.01"/></svg>Pembayaran QRIS</h1>
+<section class="summary-card"><div class="summary-title">Detail Pesanan</div>
+<div class="meta-grid">
+<div class="meta wide"><span>Order ID</span><strong id="orderId">-</strong></div>
+<div class="meta"><span>Nama</span><strong id="namaPemesan">-</strong></div>
+<div class="meta"><span>Jumlah Tiket</span><strong id="jumlahTiket">0</strong></div>
+<div class="meta wide"><span>Jenis Tiket</span><strong id="jenisTiket">-</strong></div>
+<div class="meta total wide"><span>Total Pembayaran</span><strong id="total">Rp0</strong></div>
+</div></section>
+<section class="qris-card">
+<div class="qris-head">
+<span class="qris-badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.4 5.9 6.1 2.3-6.1 2.3L12 18.4 9.6 12.5 3.5 10.2l6.1-2.3Z"/></svg>QRIS</span>
+<span class="timer" id="timerBox" role="timer"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5"/><path d="M9 2h6"/></svg><span id="timer">03:00</span></span>
+</div>
+<div class="pay-list" aria-label="Aplikasi pendukung"><span>GoPay</span><span>OVO</span><span>DANA</span><span>ShopeePay</span><span>LinkAja</span><span>M-Banking</span></div>
+<div class="qris-inner">
+<div class="qris-frame">
+<img class="qris-img" src="qris.png" alt="QRIS pembayaran GLORIFEST FESTARIA 2026" width="461" height="475" fetchpriority="high" decoding="async">
+<span class="corner tl" aria-hidden="true"></span><span class="corner tr" aria-hidden="true"></span><span class="corner bl" aria-hidden="true"></span><span class="corner br" aria-hidden="true"></span>
+<span class="scan-line" aria-hidden="true"></span>
+</div>
+<div class="order-chip"><span>Order ID</span><strong id="orderChipId">-</strong><button class="chip-copy" id="copyOrder" type="button" aria-label="Salin Order ID"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button></div>
+<div class="amount-box">
+<span>Total Pembayaran</span>
+<div class="amount-row">
+<strong id="totalQr">Rp0</strong>
+<button class="copy-btn" id="copyTotal" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span id="copyTotalLabel">Salin Nominal</span></button>
+</div>
+</div>
+<ol class="pay-steps">
+<li><span>1</span>Buka aplikasi e-wallet atau mobile banking favoritmu.</li>
+<li><span>2</span>Pindai kode QR di atas, lalu masukkan nominal yang tertera.</li>
+<li><span>3</span>Selesaikan pembayaran, simpan struk, lalu unggah bukti di bawah.</li>
+</ol>
+</div>
+</section>
+<section class="summary-card"><div class="summary-title">Unggah Bukti Pembayaran</div>
+<label class="upload" id="drop" for="file">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m17 8-5-5-5 5"/><path d="M12 3v12"/></svg>
+<strong>Upload Bukti Pembayaran</strong>
+<span>Klik untuk memilih atau seret &amp; letakkan di sini</span>
+<span>JPG, JPEG, PNG, WebP • maksimal 8 MB</span>
+</label>
+<input id="file" type="file" accept="image/jpeg,image/png,image/webp" class="input-file">
+<div class="preview" id="preview" hidden>
+<img id="previewImg" alt="Preview bukti pembayaran" decoding="async">
+<div class="preview-row"><div class="preview-name" id="fileName"></div><button class="remove" id="removeFile" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>Hapus</button></div>
+</div>
+<label class="check-row"><input type="checkbox" id="cek"><span>Saya menyatakan telah melakukan pembayaran dan mengunggah bukti pembayaran yang valid.</span></label>
+<button class="primary" id="btn" type="button" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Konfirmasi Pembayaran</button>
+</section>
+<div class="info-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v.01M12 11v5"/></svg><div>Data pesanan dan bukti pembayaran diproses dari perangkat ini. Jika layanan pengiriman notifikasi eksternal gagal, alur lokal tetap dapat dilanjutkan.</div></div>
+<footer class="footer"><div class="footer-brand"><img src="logo.png" alt="" width="44" height="44" loading="lazy" decoding="async"><span>Artatix</span></div><div class="footer-contact"><a href="tel:+6282137676220"><span class="f-ico"><svg class="ic ic-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.85 21 3 13.15 3 3a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2Z"/></svg></span>+62 821-3767-6220</a><a href="mailto:cs@artatix.co.id"><span class="f-ico"><svg class="ic ic-line" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>cs@artatix.co.id</a></div><hr class="footer-sep"><p class="footer-copy">© 2026 Artatix. Hak Cipta Dilindungi.</p></footer>
+</main>
+</div>
+<div class="loading" id="loading"><div class="loading-box"><div class="spinner"></div><strong>Memproses Pembayaran</strong><p>Menyiapkan konfirmasi...</p></div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="event-data.js"></script>
+<script>
+(() => {
+  'use strict';
+
+  const EVENT = window.EVENT_CONFIG && typeof window.EVENT_CONFIG === 'object' ? window.EVENT_CONFIG : { title: 'GLORIFEST "FESTARIA 2026"', slug: 'glorifest-festaria-2026' };
+  /* Key TIDAK diubah → kompatibel form.html & success.html */
+  const KEY = { order: 'gf_order_v1', orderId: 'gf_order_id', payment: 'gf_payment_v1', deadline: 'gf_payment_deadline' };
+  const DEST = 'success.html';
+  const MAX_SIZE = 8 * 1024 * 1024;
+  const TYPES = ['image/jpeg', 'image/png', 'image/webp'];
+  const DURATION = 180;
+  const BASE_TITLE = 'Pembayaran QRIS | Artatix';
+  const reduceMotion = Boolean(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+
+  const $ = id => document.getElementById(id);
+  const nf = new Intl.NumberFormat('id-ID');
+  const fmt = n => 'Rp' + nf.format(n);
+
+  let order = null;
+  try { order = JSON.parse(localStorage.getItem(KEY.order) || 'null'); } catch (error) {}
+  if (!order || !order.cart || !Array.isArray(order.cart.items) || !order.cart.items.length) {
+    try { localStorage.removeItem(KEY.deadline); } catch (error) {}
+    location.replace('tiket.html');
+    return;
+  }
+
+  const orderId = localStorage.getItem(KEY.orderId) || ('GF-' + Date.now().toString(36).toUpperCase());
+  try { localStorage.setItem(KEY.orderId, orderId); } catch (error) {}
+
+  $('orderId').textContent = orderId;
+  $('orderChipId').textContent = orderId;
+  $('namaPemesan').textContent = order.nama || '-';
+  $('jenisTiket').textContent = order.cart.items.map(i => i.jenis + ' (x' + i.qty + ')').join(', ');
+  $('jumlahTiket').textContent = order.cart.totalQty;
+
+  /* ═══ COUNT-UP TOTAL ═══ */
+  const countUp = (elm, target) => {
+    if (reduceMotion) { elm.textContent = fmt(target); return; }
+    const t0 = performance.now(), dur = 700;
+    const step = now => {
+      const p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+      elm.textContent = fmt(Math.round(target * e));
+      if (p < 1) requestAnimationFrame(step);
+      else elm.textContent = fmt(target);
+    };
+    requestAnimationFrame(step);
+  };
+  countUp($('total'), order.cart.totalPrice);
+  countUp($('totalQr'), order.cart.totalPrice);
+
+  const fileInput = $('file'), drop = $('drop'), check = $('cek'), btn = $('btn');
+  const preview = $('preview'), previewImg = $('previewImg'), fileName = $('fileName');
+  const removeBtn = $('removeFile'), loading = $('loading'), toast = $('toast');
+  const timerEl = $('timer'), timerBox = $('timerBox');
+
+  let receipt = null, objectUrl = null;
+  let remaining = DURATION, deadline = 0, interval = null;
+  let warned = false, expired = false, leaving = false, toastTimer = null;
+
+  const notify = msg => {
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 2600);
+  };
+
+  /* ═══ SALIN + FEEDBACK VISUAL ═══ */
+  let copiedTimer = null;
+  const flash = el => {
+    el.classList.add('copied');
+    clearTimeout(copiedTimer);
+    copiedTimer = setTimeout(() => el.classList.remove('copied'), 1400);
+  };
+
+  const copyValue = async (text, label, btnEl) => {
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.setAttribute('readonly', '');
+        ta.style.cssText = 'position:fixed;opacity:0;pointer-events:none';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        ta.remove();
+      }
+      notify(label + ' berhasil disalin');
+      if (btnEl) flash(btnEl);
+    } catch (error) {
+      notify('Gagal menyalin ' + label.toLowerCase());
+    }
+  };
+
+  const copyTotalBtn = $('copyTotal'), copyTotalLabel = $('copyTotalLabel');
+  let totalCopyTimer = null;
+  copyTotalBtn.addEventListener('click', () => {
+    copyValue(String(order.cart.totalPrice), 'Nominal', copyTotalBtn);
+    copyTotalLabel.textContent = '✓ Tersalin';
+    clearTimeout(totalCopyTimer);
+    totalCopyTimer = setTimeout(() => { copyTotalLabel.textContent = 'Salin Nominal'; }, 1500);
+  });
+  $('copyOrder').addEventListener('click', () => copyValue(orderId, 'Order ID', $('copyOrder')));
+
+  /* ═══ TIMER (judul tab ikut berdetak) ═══ */
+  const render = () => {
+    const m = Math.floor(remaining / 60), s = remaining % 60;
+    timerEl.textContent = (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+    document.title = timerEl.textContent + ' • ' + BASE_TITLE;
+  };
+
+  const stopTimer = () => { clearInterval(interval); interval = null; };
+
+  const clearStoredDeadline = () => { try { localStorage.removeItem(KEY.deadline); } catch (error) {} };
+
+  const update = () => { btn.disabled = expired || leaving || !(receipt && check.checked); };
+
+  const expire = () => {
+    if (leaving || expired) return;
+    expired = true;
+    stopTimer();
+    update();
+    clearStoredDeadline();
+    document.title = BASE_TITLE;
+    notify('Waktu pembayaran habis. Kembali ke halaman utama...');
+    setTimeout(() => location.replace('index.html'), 2000);
+  };
+
+  const tick = () => {
+    remaining = Math.max(0, Math.round((deadline - Date.now()) / 1000));
+    if (!warned && remaining <= 60 && remaining > 0) {
+      warned = true;
+      notify('Sisa waktu pembayaran kurang dari 1 menit. Segera selesaikan transaksi.');
+    }
+    if (remaining <= 30 && remaining > 0) timerBox.classList.add('urgent');
+    render();
+    if (remaining <= 0) { stopTimer(); expire(); }
+  };
+
+  const startTimer = () => { if (!interval) interval = setInterval(tick, 1000); };
+
+  try {
+    const saved = Number(localStorage.getItem(KEY.deadline));
+    const now = Date.now();
+    deadline = Number.isFinite(saved) && saved > now && saved - now <= DURATION * 1000 + 2000 ? saved : 0;
+  } catch (error) { deadline = 0; }
+  if (!deadline) {
+    deadline = Date.now() + DURATION * 1000;
+    try { localStorage.setItem(KEY.deadline, String(deadline)); } catch (error) {}
+  }
+  remaining = Math.max(0, Math.round((deadline - Date.now()) / 1000));
+  render();
+  startTimer();
+
+  /* ═══ UPLOAD ═══ */
+  const clearPreview = () => {
+    receipt = null;
+    if (objectUrl) { URL.revokeObjectURL(objectUrl); objectUrl = null; }
+    previewImg.removeAttribute('src');
+    fileName.textContent = '';
+    preview.hidden = true;
+    update();
+  };
+
+  const setFile = file => {
+    if (!file) { fileInput.value = ''; clearPreview(); return; }
+    if (!TYPES.includes(file.type) || file.size > MAX_SIZE) {
+      fileInput.value = '';
+      clearPreview();
+      notify('Bukti pembayaran harus JPG, JPEG, PNG, atau WebP maksimal 8 MB.');
+      return;
+    }
+    receipt = { name: file.name, size: file.size, type: file.type, selectedAt: new Date().toISOString() };
+    if (objectUrl) URL.revokeObjectURL(objectUrl);
+    objectUrl = URL.createObjectURL(file);
+    previewImg.src = objectUrl;
+    fileName.textContent = file.name + ' • ' + Math.ceil(file.size / 1024) + ' KB';
+    preview.hidden = false;
+    try {
+      const dt = new DataTransfer();
+      dt.items.add(file);
+      fileInput.files = dt.files;
+    } catch (error) {}
+    update();
+  };
+
+  fileInput.addEventListener('change', event => setFile(event.target.files && event.target.files[0]));
+  fileInput.addEventListener('focus', () => drop.classList.add('kb-focus'));
+  fileInput.addEventListener('blur', () => drop.classList.remove('kb-focus'));
+  removeBtn.addEventListener('click', () => { fileInput.value = ''; clearPreview(); });
+  check.addEventListener('change', update);
+
+  ['dragenter', 'dragover'].forEach(name => drop.addEventListener(name, event => { event.preventDefault(); drop.classList.add('drag'); }));
+  drop.addEventListener('dragleave', () => drop.classList.remove('drag'));
+  drop.addEventListener('drop', event => {
+    event.preventDefault();
+    drop.classList.remove('drag');
+    const file = event.dataTransfer && event.dataTransfer.files && event.dataTransfer.files[0];
+    if (file) setFile(file);
+  });
+  window.addEventListener('dragover', event => event.preventDefault());
+  window.addEventListener('drop', event => event.preventDefault());
+
+  update();
+
+  /* ═══ KIRIM EKSTERNAL ═══ */
+  const timeoutFetch = (url, options, ms) => {
+    const ctrl = new AbortController();
+    const timer = setTimeout(() => ctrl.abort(), ms);
+    return fetch(url, Object.assign({}, options, { signal: ctrl.signal })).finally(() => clearTimeout(timer));
+  };
+
+  const sendExternal = async () => {
+    const tasks = [];
+    if (EVENT.formspree && receipt) {
+      const fd = new FormData();
+      fd.append('event', EVENT.title);
+      fd.append('order_id', orderId);
+      fd.append('status', 'payment_submitted');
+      fd.append('nama', order.nama);
+      fd.append('email', order.email);
+      fd.append('whatsapp', order.wa);
+      fd.append('total', String(order.cart.totalPrice));
+      fd.append('receipt_name', receipt.name);
+      fd.append('receipt_size', String(receipt.size));
+      fd.append('receipt_type', receipt.type);
+      const file = fileInput.files && fileInput.files[0];
+      if (file) fd.append('bukti_pembayaran', file, file.name);
+      tasks.push(timeoutFetch(EVENT.formspree, { method: 'POST', headers: { 'Accept': 'application/json' }, body: fd }, 5000).catch(() => null));
+    }
+    const cfg = EVENT.emailjs || {};
+    if (cfg.serviceId && cfg.templateId && cfg.publicKey) {
+      tasks.push(timeoutFetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          service_id: cfg.serviceId,
+          template_id: cfg.templateId,
+          user_id: cfg.publicKey,
+          template_params: {
+            event: EVENT.title,
+            order_id: orderId,
+            nama: order.nama,
+            email: order.email,
+            total: fmt(order.cart.totalPrice),
+            receipt_name: receipt ? receipt.name : ''
+          }
+        })
+      }, 3500).catch(() => null));
+    }
+    if (tasks.length) await Promise.all(tasks);
+  };
+
+  btn.addEventListener('click', async () => {
+    if (btn.disabled || leaving || expired) return;
+    leaving = true;
+    stopTimer();
+    btn.disabled = true;
+    loading.classList.add('active');
+    document.body.classList.add('lock');
+    try { localStorage.setItem(KEY.payment, JSON.stringify({ orderId: orderId, submittedAt: new Date().toISOString(), receipt: receipt })); } catch (error) {}
+    clearStoredDeadline();
+    document.title = BASE_TITLE;
+    try { await sendExternal(); } catch (error) {}
+    document.body.classList.add('leaving');
+    setTimeout(() => window.location.assign(DEST), reduceMotion ? 0 : 300);
+  });
+
+  window.addEventListener('pageshow', event => {
+    if (event.persisted && leaving) {
+      leaving = false;
+      document.body.classList.remove('leaving', 'lock');
+      loading.classList.remove('active');
+      update();
+      render();
+      if (!expired && remaining > 0) startTimer();
+    }
+  });
+})();
+</script>
+</body>
+</html>
