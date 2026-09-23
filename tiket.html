@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Pilih Kategori Tiket | TITIK BALIK FESTIVAL 2027</title>
-<meta name="theme-color" content="#153596">
+<meta name="theme-color" content="#0b1d58">
 <meta name="color-scheme" content="light">
 <meta name="description" content="Pilih kategori tiket TITIK BALIK FESTIVAL 2027 — 30 Januari 2027, Graha Cakrawala Malang.">
 <meta property="og:type" content="website">
@@ -13,323 +13,242 @@
 <meta property="og:image" content="banner.png">
 <link rel="icon" type="image/png" href="logo-saya.png">
 <link rel="apple-touch-icon" href="logo-saya.png">
-<link rel="prefetch" href="form.html">
+<link rel="preload" as="image" href="banner.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{
-  --navy:#153596;--blue:#3561ee;--blue-dark:#234bc8;--ink:#101728;
-  --muted:#6f8096;--panel:#f2f6ff;--line:#e2e8f0;--red:#d92732;
-  --red-bg:#fff1f1;--green:#168a45;--green-bg:#e9f8ee;
-}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-body{margin:0;background:#fff;color:var(--ink);font-family:Poppins,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
-img{display:block;max-width:100%;height:auto}
-a{text-decoration:none;color:inherit}
-button{font:inherit}
-button:focus-visible,a:focus-visible{outline:3px solid rgba(53,97,238,.35);outline-offset:3px}
+:root{--navy:#0b1d58;--blue:#2856e8;--blue2:#1742c8;--ink:#0b1222;--muted:#718096;--line:#e6ebf2;--green:#148348;--green-bg:#e9f8ef;--red:#c92b35;--red-bg:#fff0f1;--shadow:0 18px 55px rgba(19,42,108,.10);--radius:24px}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(180deg,#fff 0,#f8faff 100%);color:var(--ink);font-family:Poppins,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 85% 8%,rgba(40,86,232,.07),transparent 27%),radial-gradient(circle at 10% 30%,rgba(11,29,88,.045),transparent 24%);z-index:-1}
+img{display:block;max-width:100%;height:auto}a{color:inherit;text-decoration:none}button{font:inherit}
+button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid rgba(40,86,232,.28);outline-offset:3px}
 .sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
-.page{width:100%;max-width:920px;margin:0 auto;min-height:100vh;background:#fff}
-.wrap{width:100%;max-width:820px;margin:0 auto;padding-inline:46px}
-
-.topbar{padding:42px 0 36px}
-.bar-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand img{width:300px;max-height:78px;object-fit:contain;object-position:left center}
-.lang{display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border-radius:999px;background:#f0f4fa;font-size:21px;font-weight:600;color:#0d162b;white-space:nowrap}
-.flag{width:24px;height:24px;border-radius:50%;background:linear-gradient(180deg,#f03930 0 50%,#fff 50%);box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
-
-.progress{background:var(--navy)}
-.steps{height:88px;display:flex;align-items:center;list-style:none;margin:0 auto;padding-block:0}
-.step{display:flex;align-items:center;gap:13px;flex:none}
-.s-dot{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-size:21px;font-weight:600;color:#fff;border:2px solid rgba(255,255,255,.78)}
-.step.active .s-dot{background:#fff;color:var(--navy);border-color:#fff}
-.s-label{font-size:21px;font-weight:600;color:#fff;white-space:nowrap}
-.s-sep{display:flex;align-items:center;justify-content:center;flex:1;min-width:16px}
-.s-sep svg{width:22px;height:22px;fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
-
-main{padding-bottom:245px}
-.banner{width:100%;margin-top:48px;border-radius:24px;box-shadow:0 10px 28px rgba(17,35,83,.10)}
-.heading{display:inline-flex;align-items:center;gap:12px;margin:46px 0 28px;padding:12px 24px;border-radius:999px;background:var(--blue);color:#fff;font-size:22px;font-weight:700;box-shadow:0 8px 20px rgba(53,97,238,.17)}
-.heading svg{width:24px;height:24px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-
-.tickets{display:grid;gap:20px}
-.card{background:var(--panel);border-radius:24px;padding:20px}
-.badge-row{margin:0 0 16px}
-.badge{display:inline-flex;align-items:center;padding:6px 14px;border-radius:999px;background:var(--red-bg);color:var(--red);font-size:15px;font-weight:700}
-.sale-badge{background:var(--green-bg);color:var(--green)}
-
-.tcard{background:#fff;border-radius:20px;padding:24px 24px 26px;box-shadow:0 4px 16px rgba(30,52,143,.045)}
-.tname{margin:0;font-size:23px;font-weight:700;line-height:1.35;color:#090d18}
-.tdivider{position:relative;border-top:1px dashed #dfe4e9;margin:28px -24px 0}
-.notch{position:absolute;top:-11px;width:22px;height:22px;border-radius:50%;background:var(--panel)}
-.notch.l{left:-11px}.notch.r{right:-11px}
-.tprice{display:block;margin-top:24px;font-size:23px;font-weight:700;color:#080c16}
-
-.desc{margin-top:25px}
-.desc-head{display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:18px;font-weight:600;color:#111827}
-.chevron{width:20px;height:20px;fill:none;stroke:#111827;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
-.desc-body{margin-top:15px;color:var(--muted);font-size:16px;line-height:1.75}
-.desc-body strong{display:block;margin-bottom:9px;color:#65788f;font-size:16px;font-weight:700}
-.desc-body p{margin:0 0 10px}
-
-.select-area{margin-top:22px}
-.select-ticket{width:100%;height:48px;border:0;border-radius:12px;background:linear-gradient(135deg,var(--blue),var(--blue-dark));color:#fff;font-size:16px;font-weight:700;cursor:pointer;box-shadow:0 7px 16px rgba(53,97,238,.16);transition:transform .15s ease,box-shadow .15s ease}
-.select-ticket:hover{box-shadow:0 9px 20px rgba(53,97,238,.21)}
-.select-ticket:active{transform:scale(.985)}
-.qty-control{display:none;align-items:center;justify-content:space-between;gap:10px;padding:5px;background:#edf3ff;border-radius:12px}
-.qty-control.show{display:flex}
-.qty-btn{width:42px;height:38px;border:0;border-radius:10px;background:var(--blue);color:#fff;font-size:23px;font-weight:700;cursor:pointer;line-height:1}
-.qty-btn:active{transform:scale(.96)}
-.qty-value{min-width:36px;text-align:center;font-size:18px;font-weight:800;color:#173b9d}
-.qty-label{font-size:12px;font-weight:600;color:#66758a;margin-right:auto;padding-left:4px}
-
-.footer{text-align:center;margin-top:105px;padding-bottom:20px}
-.f-brand{display:flex;justify-content:center;align-items:center}
-.f-brand img{width:230px}
-.f-contact{display:flex;flex-direction:column;align-items:center;gap:17px;margin-top:40px}
-.f-contact a{display:flex;align-items:center;gap:14px;font-size:18px;font-weight:600;color:#0d1628}
-.f-ico{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--blue);color:#fff}
-.f-ico svg{width:21px;height:21px;fill:currentColor;stroke:currentColor}
-.f-sep{border:0;border-top:1px solid #e0e5ea;margin:40px 0 30px}
-.f-copy{margin:0;color:#73849a;font-size:16px}
-
-.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(255,255,255,.98);border-top:1px solid #e8ebef;box-shadow:0 -6px 22px rgba(20,35,70,.06);padding:18px 0 20px}
-.sticky-inner{max-width:820px}
-.p-row{display:flex;align-items:center;justify-content:space-between;gap:16px}
-.p-label{font-size:18px;font-weight:600;color:#101728}
-.p-price{font-size:23px;font-weight:700;color:#2146a5}
-.buy{margin-top:14px;width:100%;height:56px;border:0;border-radius:12px;background:#9aadef;color:#fff;font-size:19px;font-weight:700;cursor:not-allowed;opacity:.98}
-.buy.enabled{background:linear-gradient(135deg,var(--blue),var(--blue-dark));cursor:pointer;opacity:1;box-shadow:0 9px 20px rgba(53,97,238,.2)}
-
-@media(max-width:700px){
-  .wrap{padding-inline:30px}
-  .topbar{padding:30px 0 26px}
-  .brand img{width:245px;max-height:66px}
-  .lang{padding:10px 17px;font-size:17px}.flag{width:21px;height:21px}
-  .steps{height:78px}.step{gap:9px}.s-dot{width:40px;height:40px;font-size:19px}.s-label{font-size:18px}.s-sep svg{width:19px;height:19px}
-  .banner{margin-top:38px;border-radius:20px}
-  .heading{margin-top:38px;margin-bottom:24px;font-size:19px;padding:10px 20px}
-  .card{padding:18px}.tcard{padding:22px 20px 24px}.tdivider{margin-inline:-20px}.tname{font-size:21px}.tprice{font-size:21px}
-  .desc-head{font-size:17px}.desc-body,.desc-body strong{font-size:15px}
-  .p-label{font-size:17px}.p-price{font-size:21px}
-}
-@media(max-width:480px){
-  .wrap{padding-inline:20px}
-  .topbar{padding:23px 0 20px}.brand img{width:195px}.lang{padding:8px 13px;font-size:15px;gap:7px}.flag{width:18px;height:18px}
-  .steps{height:68px}.s-dot{width:34px;height:34px;font-size:16px}.s-label{font-size:15px}.s-sep svg{width:17px;height:17px}
-  main{padding-bottom:205px}.banner{margin-top:30px;border-radius:17px}
-  .heading{margin-top:30px;margin-bottom:20px;font-size:17px;padding:9px 16px;gap:8px}.heading svg{width:20px;height:20px}
-  .tickets{gap:16px}.card{border-radius:20px;padding:15px}.badge-row{margin-bottom:12px}.badge{font-size:14px;padding:5px 12px}
-  .tcard{border-radius:17px;padding:20px 18px 21px}.tname{font-size:19px}.tdivider{margin-top:23px;margin-inline:-18px}
-  .tprice{margin-top:20px;font-size:20px}.desc{margin-top:21px}.desc-head{font-size:16px}.desc-body{font-size:14px;line-height:1.7;margin-top:13px}.desc-body strong{font-size:14px;margin-bottom:7px}
-  .select-area{margin-top:18px}.select-ticket{height:46px;font-size:15px}.qty-btn{width:39px;height:37px}.qty-value{font-size:17px}
-  .footer{margin-top:72px}.f-brand img{width:180px}.f-contact{margin-top:30px;gap:14px}.f-contact a{font-size:16px}.f-ico{width:34px;height:34px}.f-ico svg{width:19px;height:19px}
-  .f-sep{margin:32px 0 24px}.f-copy{font-size:14px}
-  .sticky{padding:15px 0 17px}.p-label{font-size:15px}.p-price{font-size:20px}.buy{height:52px;margin-top:12px;font-size:17px}
-}
-@media(prefers-reduced-motion:reduce){
-  *{scroll-behavior:auto!important;transition:none!important;animation:none!important}
-}
+.page{width:100%;max-width:960px;margin:auto;min-height:100vh;background:rgba(255,255,255,.78)}
+.wrap{width:100%;max-width:850px;margin:auto;padding-inline:42px}
+.topbar{padding:34px 0 30px}.bar-inner{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand img{width:285px;max-height:74px;object-fit:contain;object-position:left center}
+.lang{display:inline-flex;align-items:center;gap:10px;padding:10px 17px;border:1px solid #e4e9f1;border-radius:999px;background:rgba(246,248,252,.9);box-shadow:0 7px 22px rgba(20,40,90,.05);font-size:15px;font-weight:700;color:#16213b}
+.flag{width:22px;height:22px;border-radius:50%;background:linear-gradient(#ed3b36 0 50%,#fff 50%);box-shadow:inset 0 0 0 1px rgba(0,0,0,.06)}
+.progress{background:linear-gradient(110deg,#081748,#153a9c 60%,#2856e8);box-shadow:0 12px 30px rgba(11,29,88,.14)}
+.steps{height:82px;display:flex;align-items:center;list-style:none;margin:0 auto;padding-block:0}
+.step{display:flex;align-items:center;gap:11px;flex:none}.s-dot{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-size:17px;font-weight:700;color:#fff;border:1px solid rgba(255,255,255,.5);background:rgba(255,255,255,.08)}
+.step.active .s-dot{background:#fff;color:var(--navy);border-color:#fff;box-shadow:0 7px 20px rgba(255,255,255,.18)}
+.s-label{font-size:16px;font-weight:700;color:#fff;white-space:nowrap}.s-sep{display:flex;align-items:center;justify-content:center;flex:1;min-width:14px;opacity:.8}
+.s-sep svg{width:19px;height:19px;fill:none;stroke:#fff;stroke-width:2.7;stroke-linecap:round;stroke-linejoin:round}
+main{padding-bottom:245px}.banner{width:100%;margin-top:42px;border-radius:26px;box-shadow:0 22px 60px rgba(18,43,111,.15);border:1px solid rgba(255,255,255,.9);transition:transform .35s ease,box-shadow .35s ease}
+.banner:hover{transform:translateY(-2px);box-shadow:0 28px 72px rgba(18,43,111,.19)}
+.heading{display:flex;align-items:center;gap:12px;width:max-content;margin:44px 0 24px;padding:11px 19px;border-radius:999px;background:linear-gradient(135deg,var(--blue),var(--blue2));color:#fff;font-size:18px;font-weight:800;box-shadow:0 12px 30px rgba(40,86,232,.19)}
+.heading svg{width:21px;height:21px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tickets{display:grid;gap:18px}.ticket-card{position:relative;overflow:hidden;border:1px solid #e7ecf4;border-radius:var(--radius);background:rgba(245,248,253,.88);box-shadow:var(--shadow);transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease}
+.ticket-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:transparent}.ticket-card.sale::before{background:linear-gradient(180deg,#2856e8,#6b8dff)}
+.ticket-card:hover{transform:translateY(-3px);box-shadow:0 25px 65px rgba(19,42,108,.14);border-color:#dbe3f1}
+.ticket-top{display:flex;align-items:center;justify-content:space-between;padding:18px 20px 0}
+.status{display:inline-flex;align-items:center;gap:8px;padding:6px 11px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.02em}
+.sold-status{background:var(--red-bg);color:var(--red)}.sale-status{background:var(--green-bg);color:var(--green)}
+.status-dot{width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 0 4px rgba(20,131,72,.10)}
+.ticket-index{font-size:11px;font-weight:800;letter-spacing:.12em;color:#a0aec0}
+.ticket-main{margin:9px 10px 10px;padding:22px 24px 23px;border-radius:19px;background:rgba(255,255,255,.96);box-shadow:0 5px 22px rgba(23,48,112,.055)}
+.ticket-title-row{display:flex;align-items:flex-start;justify-content:space-between;gap:18px}.ticket-title-row h2{margin:0;max-width:62%;font-size:22px;line-height:1.35;font-weight:800;letter-spacing:-.02em}
+.price{font-size:21px;font-weight:800;white-space:nowrap;color:#0c1730}.ticket-rule{position:relative;margin:24px -24px 0;border-top:1px dashed #dce3ed}
+.ticket-rule::before,.ticket-rule::after{content:"";position:absolute;top:-10px;width:20px;height:20px;border-radius:50%;background:#f5f8fd}.ticket-rule::before{left:-10px}.ticket-rule::after{right:-10px}
+.ticket-rule i{position:absolute;left:50%;top:-4px;width:7px;height:7px;border-radius:50%;background:#dbe3ed;transform:translateX(-50%)}
+.details{margin-top:22px}.details summary{display:flex;align-items:center;justify-content:space-between;gap:12px;cursor:pointer;list-style:none;font-size:15px;font-weight:700;color:#16213b;user-select:none}
+.details summary::-webkit-details-marker{display:none}.summary-icon{font-size:22px;line-height:1;color:#46546d;transition:transform .2s ease}.details[open] .summary-icon{transform:rotate(180deg)}
+.details-body{margin-top:14px;color:var(--muted);font-size:14px;line-height:1.75;animation:reveal .2s ease}.details-body strong{display:block;margin-bottom:7px;color:#63738b;font-size:13px;line-height:1.55}.details-body p{margin:0 0 8px}
+@keyframes reveal{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+.picker{margin-top:20px}.choose,.buy{border:0;cursor:pointer;color:#fff;background:linear-gradient(135deg,var(--blue),var(--blue2));box-shadow:0 12px 25px rgba(40,86,232,.20);transition:transform .18s ease,box-shadow .18s ease,filter .18s ease}
+.choose{width:100%;height:48px;border-radius:13px;font-size:15px;font-weight:800;display:flex;align-items:center;justify-content:center;gap:8px}.choose span{font-size:20px;line-height:1;transition:transform .18s ease}
+.choose:hover,.buy.enabled:hover{filter:brightness(1.04);box-shadow:0 15px 30px rgba(40,86,232,.26);transform:translateY(-1px)}.choose:active,.buy.enabled:active,.qty-btn:active{transform:scale(.98)}
+.qty{display:grid;grid-template-columns:1fr 42px 46px 42px;align-items:center;gap:7px;padding:5px;background:#edf3ff;border:1px solid #dce7ff;border-radius:13px}.qty[hidden]{display:none}
+.qty-label{padding-left:9px;color:#65758e;font-size:12px;font-weight:700}.qty-btn{width:42px;height:38px;border:0;border-radius:10px;background:var(--blue);color:#fff;font-size:22px;font-weight:800;cursor:pointer;line-height:1}
+.qty-value{text-align:center;font-size:17px;font-weight:800;color:#173b9d}
+.footer{text-align:center;margin-top:90px;padding-bottom:24px}.f-brand{display:flex;justify-content:center}.f-brand img{width:215px}
+.f-contact{display:flex;flex-direction:column;align-items:center;gap:13px;margin-top:30px}.f-contact a{display:flex;align-items:center;gap:11px;font-size:15px;font-weight:700;color:#172139}
+.f-ico{width:35px;height:35px;border-radius:50%;display:grid;place-items:center;background:#eaf0ff;color:var(--blue)}.f-ico svg{width:18px;height:18px;fill:currentColor;stroke:currentColor}
+.f-sep{border:0;border-top:1px solid #e1e6ee;margin:32px 0 23px}.f-copy{margin:0;color:#8190a5;font-size:13px}
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(255,255,255,.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-top:1px solid rgba(216,224,236,.85);box-shadow:0 -18px 45px rgba(20,35,70,.09);padding:13px 0 calc(15px + env(safe-area-inset-bottom))}
+.sticky-inner{max-width:850px}.p-row{display:flex;align-items:center;justify-content:space-between;gap:16px}.p-label{font-size:14px;font-weight:700;color:#526178}.p-price{font-size:20px;font-weight:800;color:#183b9f}
+.buy{margin-top:10px;width:100%;height:53px;border-radius:13px;font-size:16px;font-weight:800;background:#aebbe0;box-shadow:none;cursor:not-allowed}.buy.enabled{background:linear-gradient(135deg,var(--blue),var(--blue2));cursor:pointer;box-shadow:0 12px 26px rgba(40,86,232,.22)}
+.toast{position:fixed;left:50%;bottom:154px;z-index:80;transform:translate(-50%,16px);padding:10px 15px;border-radius:999px;background:#0d1834;color:#fff;font-size:12px;font-weight:700;box-shadow:0 14px 35px rgba(10,20,50,.22);opacity:0;pointer-events:none;transition:opacity .22s ease,transform .22s ease}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:700px){.wrap{padding-inline:26px}.topbar{padding:27px 0 24px}.brand img{width:235px;max-height:62px}.steps{height:74px}.s-dot{width:38px;height:38px;font-size:16px}.s-label{font-size:14px}.s-sep svg{width:17px;height:17px}.banner{margin-top:32px;border-radius:21px}.heading{margin-top:34px;font-size:17px;padding:10px 16px}.ticket-top{padding:15px 16px 0}.ticket-main{margin:8px;padding:19px 18px 20px}.ticket-title-row h2{font-size:19px}.price{font-size:18px}.ticket-rule{margin-left:-18px;margin-right:-18px;margin-top:21px}.details{margin-top:19px}.details-body{font-size:13px}.footer{margin-top:65px}}
+@media(max-width:480px){.wrap{padding-inline:18px}.topbar{padding:21px 0 19px}.brand img{width:185px}.lang{padding:8px 12px;font-size:13px;gap:7px}.flag{width:18px;height:18px}.steps{height:66px}.step{gap:7px}.s-dot{width:32px;height:32px;font-size:14px}.s-label{font-size:12px}.s-sep{min-width:8px}.s-sep svg{width:15px;height:15px}main{padding-bottom:225px}.banner{margin-top:25px;border-radius:16px}.heading{margin-top:27px;margin-bottom:18px;font-size:15px;padding:9px 14px}.tickets{gap:14px}.ticket-card{border-radius:20px}.ticket-top{padding:13px 13px 0}.ticket-main{margin:7px;padding:17px 15px 18px;border-radius:16px}.ticket-title-row{display:block}.ticket-title-row h2{max-width:none;font-size:18px}.price{display:block;margin-top:8px;font-size:18px}.ticket-rule{margin-left:-15px;margin-right:-15px;margin-top:19px}.details-body{font-size:12.5px;line-height:1.7}.qty{grid-template-columns:1fr 40px 42px 40px}.qty-btn{width:40px;height:36px}.footer{margin-top:55px}.f-brand img{width:175px}.f-contact{margin-top:25px}.f-contact a{font-size:14px}.f-ico{width:32px;height:32px}.f-copy{font-size:12px}.sticky{padding-top:11px}.p-label{font-size:12px}.p-price{font-size:18px}.buy{height:50px;font-size:15px;margin-top:8px}.toast{bottom:142px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
 <div class="page">
-<header class="topbar">
-  <div class="wrap bar-inner">
-    <a class="brand" href="index.html" aria-label="Artatix beranda">
-      <img src="logo-saya.png" alt="Artatix" width="315" height="82">
-    </a>
-    <span class="lang"><span class="flag" aria-hidden="true"></span>ID</span>
-  </div>
-</header>
-
-<nav class="progress" aria-label="Langkah pemesanan">
-  <ol class="steps wrap">
-    <li class="step active" aria-current="step"><span class="s-dot">1</span><span class="s-label">Pilih Kategori</span></li>
-    <li class="s-sep" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></li>
-    <li class="step"><span class="s-dot">2</span><span class="sr-only">Langkah 2</span></li>
-    <li class="s-sep" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></li>
-    <li class="step"><span class="s-dot">3</span><span class="sr-only">Langkah 3</span></li>
-    <li class="s-sep" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></li>
-    <li class="step"><span class="s-dot">4</span><span class="sr-only">Langkah 4</span></li>
-  </ol>
-</nav>
-
+<header class="topbar"><div class="wrap bar-inner">
+<a class="brand" href="index.html" aria-label="Artatix beranda"><img src="logo-saya.png" alt="Artatix" width="315" height="82"></a>
+<span class="lang"><span class="flag" aria-hidden="true"></span>ID</span>
+</div></header>
+<nav class="progress" aria-label="Langkah pemesanan"><ol class="steps wrap">
+<li class="step active" aria-current="step"><span class="s-dot">1</span><span class="s-label">Pilih Kategori</span></li>
+<li class="s-sep" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></li>
+<li class="step"><span class="s-dot">2</span><span class="sr-only">Langkah 2</span></li>
+<li class="s-sep" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></li>
+<li class="step"><span class="s-dot">3</span><span class="sr-only">Langkah 3</span></li>
+<li class="s-sep" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></li>
+<li class="step"><span class="s-dot">4</span><span class="sr-only">Langkah 4</span>
+</li></ol></nav>
 <main class="wrap">
-  <img class="banner" src="banner.png" alt="TITIK BALIK FESTIVAL 2027 — 30 Januari 2027, Graha Cakrawala Malang" width="1400" height="520" fetchpriority="high" decoding="async">
+<img class="banner" src="banner.png" alt="TITIK BALIK FESTIVAL 2027 — 30 Januari 2027, Graha Cakrawala Malang" width="1400" height="520" fetchpriority="high" decoding="async">
+<h1 class="heading"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2m0 4v2m0 4v2"/></svg>Kategori Tiket</h1>
+<section class="tickets" aria-label="Daftar kategori tiket">
+      <article class="ticket-card sold" aria-label="Early Bird Festival">
+        <div class="ticket-top">
+          <span class="status sold-status">Sold Out</span>
+          <span class="ticket-index">01</span>
+        </div>
+        <div class="ticket-main">
+          <div class="ticket-title-row">
+            <h2>Early Bird Festival</h2>
+            <span class="price">Rp175.000</span>
+          </div>
+          <div class="ticket-rule"><span></span><i></i><span></span></div>
+          <details class="details">
+            <summary>Deskripsi <span class="summary-icon">⌄</span></summary>
+            <div class="details-body">
+              <strong>EARLY BIRD Festival– TITIK BALIK 2027</strong>
+              <p>Tiket Early Bird Festival untuk menyaksikan TITIK BALIK 2027 pada 30 Januari 2027</p>
+              <p>Tiket berlaku untuk 1 (satu) orang dan dapat digunakan untuk menghadiri event sesuai tanggal dan lokasi yang tertera pada tiket.</p>
+            </div>
+          </details>
+        </div>
+      </article>
 
-  <h1 class="heading">
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2m0 4v2m0 4v2"/></svg>
-    Kategori Tiket
-  </h1>
+      <article class="ticket-card sold" aria-label="Early Bird VIP">
+        <div class="ticket-top">
+          <span class="status sold-status">Sold Out</span>
+          <span class="ticket-index">02</span>
+        </div>
+        <div class="ticket-main">
+          <div class="ticket-title-row">
+            <h2>Early Bird VIP</h2>
+            <span class="price">Rp275.000</span>
+          </div>
+          <div class="ticket-rule"><span></span><i></i><span></span></div>
+          <details class="details">
+            <summary>Deskripsi <span class="summary-icon">⌄</span></summary>
+            <div class="details-body">
+              <strong>EARLY BIRD VIP STANDING– TITIK BALIK 2027</strong>
+              <p>Tiket Early Bird VIP Standing untuk menyaksikan TITIK BALIK 2027 pada 30 Januari 2027</p>
+              <p>Tiket berlaku untuk 1 (satu) orang dan dapat digunakan untuk menghadiri event sesuai tanggal dan lokasi yang tertera pada tiket.</p>
+            </div>
+          </details>
+        </div>
+      </article>
 
-  <section class="tickets" aria-label="Daftar kategori tiket">
-    <article class="card">
-      <div class="badge-row"><span class="badge">Sold Out</span></div>
-      <div class="tcard">
-        <h2 class="tname">Early Bird Festival</h2>
-        <div class="tdivider"><span class="notch l"></span><span class="notch r"></span></div>
-        <span class="tprice">Rp175.000</span>
-        <div class="desc">
-          <div class="desc-head">Deskripsi<svg class="chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 15 7-7 7 7"/></svg></div>
-          <div class="desc-body">
-            <strong>EARLY BIRD Festival– TITIK BALIK 2027</strong>
-            <p>Tiket Early Bird Festival untuk menyaksikan TITIK BALIK 2027 pada 30 Januari 2027</p>
-            <p>Tiket berlaku untuk 1 (satu) orang dan dapat digunakan untuk menghadiri event sesuai tanggal dan lokasi yang tertera pada tiket.</p>
+      <article class="ticket-card sale" data-ticket="PRESALE FESTIVAL" data-price="200000" data-qty="0" aria-label="PRESALE FESTIVAL">
+        <div class="ticket-top">
+          <span class="status sale-status"><span class="status-dot"></span>On Sale</span>
+          <span class="ticket-index">03</span>
+        </div>
+        <div class="ticket-main">
+          <div class="ticket-title-row">
+            <h2>PRESALE FESTIVAL</h2>
+            <span class="price">Rp200.000</span>
+          </div>
+          <div class="ticket-rule"><span></span><i></i><span></span></div>
+          <details class="details">
+            <summary>Deskripsi <span class="summary-icon">⌄</span></summary>
+            <div class="details-body">
+              <strong>PRESALE FESTIVAL – TITIK BALIK 2027</strong>
+              <p>Tiket Presale Festival untuk menyaksikan TITIK BALIK 2027 pada 30 Januari 2027.</p>
+              <p>Tiket berlaku untuk 1 (satu) orang dan dapat digunakan sesuai tanggal dan lokasi yang tertera pada tiket.</p>
+            </div>
+          </details>
+          <div class="picker">
+            <button class="choose" type="button">Pilih Tiket <span>＋</span></button>
+            <div class="qty" hidden>
+              <span class="qty-label">Jumlah tiket</span>
+              <button class="qty-btn minus" type="button" aria-label="Kurangi tiket">−</button>
+              <output class="qty-value" aria-live="polite">0</output>
+              <button class="qty-btn plus" type="button" aria-label="Tambah tiket">+</button>
+            </div>
           </div>
         </div>
-      </div>
-    </article>
+      </article>
 
-    <article class="card">
-      <div class="badge-row"><span class="badge">Sold Out</span></div>
-      <div class="tcard">
-        <h2 class="tname">Early Bird VIP</h2>
-        <div class="tdivider"><span class="notch l"></span><span class="notch r"></span></div>
-        <span class="tprice">Rp275.000</span>
-        <div class="desc">
-          <div class="desc-head">Deskripsi<svg class="chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 15 7-7 7 7"/></svg></div>
-          <div class="desc-body">
-            <strong>EARLY BIRD VIP STANDING– TITIK BALIK 2027</strong>
-            <p>Tiket Early Bird VIP Standing untuk menyaksikan TITIK BALIK 2027 pada 30 Januari 2027</p>
-            <p>Tiket berlaku untuk 1 (satu) orang dan dapat digunakan untuk menghadiri event sesuai tanggal dan lokasi yang tertera pada tiket.</p>
+      <article class="ticket-card sale" data-ticket="PRESALE VIP" data-price="300000" data-qty="0" aria-label="PRESALE VIP">
+        <div class="ticket-top">
+          <span class="status sale-status"><span class="status-dot"></span>On Sale</span>
+          <span class="ticket-index">04</span>
+        </div>
+        <div class="ticket-main">
+          <div class="ticket-title-row">
+            <h2>PRESALE VIP</h2>
+            <span class="price">Rp300.000</span>
+          </div>
+          <div class="ticket-rule"><span></span><i></i><span></span></div>
+          <details class="details">
+            <summary>Deskripsi <span class="summary-icon">⌄</span></summary>
+            <div class="details-body">
+              <strong>PRESALE VIP – TITIK BALIK 2027</strong>
+              <p>Tiket Presale VIP untuk menyaksikan TITIK BALIK 2027 pada 30 Januari 2027.</p>
+              <p>Tiket berlaku untuk 1 (satu) orang dan dapat digunakan sesuai tanggal dan lokasi yang tertera pada tiket.</p>
+            </div>
+          </details>
+          <div class="picker">
+            <button class="choose" type="button">Pilih Tiket <span>＋</span></button>
+            <div class="qty" hidden>
+              <span class="qty-label">Jumlah tiket</span>
+              <button class="qty-btn minus" type="button" aria-label="Kurangi tiket">−</button>
+              <output class="qty-value" aria-live="polite">0</output>
+              <button class="qty-btn plus" type="button" aria-label="Tambah tiket">+</button>
+            </div>
           </div>
         </div>
-      </div>
-    </article>
-
-    <article class="card sale-card" data-ticket="PRESALE FESTIVAL" data-price="200000">
-      <div class="badge-row"><span class="badge sale-badge">On Sale</span></div>
-      <div class="tcard">
-        <h2 class="tname">PRESALE FESTIVAL</h2>
-        <div class="tdivider"><span class="notch l"></span><span class="notch r"></span></div>
-        <span class="tprice">Rp200.000</span>
-        <div class="desc">
-          <div class="desc-head">Deskripsi<svg class="chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 15 7-7 7 7"/></svg></div>
-          <div class="desc-body">
-            <strong>PRESALE FESTIVAL – TITIK BALIK 2027</strong>
-            <p>Tiket Presale Festival untuk menyaksikan TITIK BALIK 2027 pada 30 Januari 2027.</p>
-            <p>Tiket berlaku untuk 1 (satu) orang dan dapat digunakan sesuai tanggal dan lokasi yang tertera pada tiket.</p>
-          </div>
-        </div>
-        <div class="select-area">
-          <button class="select-ticket" type="button" aria-expanded="false">Pilih Tiket</button>
-          <div class="qty-control" aria-hidden="true">
-            <span class="qty-label">Jumlah tiket</span>
-            <button class="qty-btn minus" type="button" aria-label="Kurangi tiket">−</button>
-            <span class="qty-value" aria-live="polite">0</span>
-            <button class="qty-btn plus" type="button" aria-label="Tambah tiket">+</button>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <article class="card sale-card" data-ticket="PRESALE VIP" data-price="300000">
-      <div class="badge-row"><span class="badge sale-badge">On Sale</span></div>
-      <div class="tcard">
-        <h2 class="tname">PRESALE VIP</h2>
-        <div class="tdivider"><span class="notch l"></span><span class="notch r"></span></div>
-        <span class="tprice">Rp300.000</span>
-        <div class="desc">
-          <div class="desc-head">Deskripsi<svg class="chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 15 7-7 7 7"/></svg></div>
-          <div class="desc-body">
-            <strong>PRESALE VIP – TITIK BALIK 2027</strong>
-            <p>Tiket Presale VIP untuk menyaksikan TITIK BALIK 2027 pada 30 Januari 2027.</p>
-            <p>Tiket berlaku untuk 1 (satu) orang dan dapat digunakan sesuai tanggal dan lokasi yang tertera pada tiket.</p>
-          </div>
-        </div>
-        <div class="select-area">
-          <button class="select-ticket" type="button" aria-expanded="false">Pilih Tiket</button>
-          <div class="qty-control" aria-hidden="true">
-            <span class="qty-label">Jumlah tiket</span>
-            <button class="qty-btn minus" type="button" aria-label="Kurangi tiket">−</button>
-            <span class="qty-value" aria-live="polite">0</span>
-            <button class="qty-btn plus" type="button" aria-label="Tambah tiket">+</button>
-          </div>
-        </div>
-      </div>
-    </article>
-  </section>
-
-  <footer class="footer">
-    <div class="f-brand"><img src="logo-saya.png" alt="Artatix" width="270" height="70"></div>
-    <div class="f-contact">
-      <a href="tel:+6282137676220"><span class="f-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.85 21 3 13.15 3 3a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2Z"/></svg></span>+62 821-3767-6220</a>
-      <a href="mailto:cs@artatix.co.id"><span class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>cs@artatix.co.id</a>
-    </div>
-    <hr class="f-sep">
-    <p class="f-copy">© 2026 Artatix. Hak Cipta Dilindungi.</p>
-  </footer>
-</main>
-</div>
-
-<div class="sticky">
-  <div class="wrap sticky-inner">
-    <div class="p-row"><span class="p-label">Harga Mulai dari</span><strong class="p-price">Rp175.000</strong></div>
-    <button class="buy" type="button" disabled>Beli Sekarang</button>
-  </div>
-</div>
-
+      </article>
+</section>
+<footer class="footer">
+<div class="f-brand"><img src="logo-saya.png" alt="Artatix" width="270" height="70"></div>
+<div class="f-contact">
+<a href="tel:+6282137676220"><span class="f-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.85 21 3 13.15 3 3a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2Z"/></svg></span>+62 821-3767-6220</a>
+<a href="mailto:cs@artatix.co.id"><span class="f-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>cs@artatix.co.id</a>
+</div><hr class="f-sep"><p class="f-copy">© 2026 Artatix. Hak Cipta Dilindungi.</p>
+</footer>
+</main></div>
+<div class="sticky" aria-label="Ringkasan pembelian"><div class="wrap sticky-inner">
+<div class="p-row"><span class="p-label">Harga Mulai dari</span><strong class="p-price">Rp175.000</strong></div>
+<button class="buy" type="button" disabled>Beli Sekarang</button>
+</div></div>
+<div class="toast" role="status" aria-live="polite"></div>
 <script>
-(function(){
-  const cards=[...document.querySelectorAll('.sale-card')];
-  const priceEl=document.querySelector('.p-price');
-  const buy=document.querySelector('.buy');
-  const format=n=>'Rp'+n.toLocaleString('id-ID');
-
-  function update(){
-    let total=0,count=0;
-    cards.forEach(card=>{
-      const qty=Number(card.querySelector('.qty-value').textContent)||0;
-      total+=qty*Number(card.dataset.price);
-      count+=qty;
-    });
-    priceEl.textContent=format(total||175000);
-    buy.disabled=count===0;
-    buy.classList.toggle('enabled',count>0);
-    buy.textContent=count?`Lanjutkan (${count} Tiket)`:'Beli Sekarang';
-  }
-
-  cards.forEach(card=>{
-    const select=card.querySelector('.select-ticket');
-    const control=card.querySelector('.qty-control');
-    const value=card.querySelector('.qty-value');
-
-    select.addEventListener('click',()=>{
-      select.hidden=true;
-      control.classList.add('show');
-      control.setAttribute('aria-hidden','false');
-      value.textContent='1';
-      select.setAttribute('aria-expanded','true');
-      update();
-    });
-
-    card.querySelector('.plus').addEventListener('click',()=>{
-      value.textContent=String(Math.min(10,(Number(value.textContent)||0)+1));
-      update();
-    });
-
-    card.querySelector('.minus').addEventListener('click',()=>{
-      const next=Math.max(0,(Number(value.textContent)||0)-1);
-      value.textContent=String(next);
-      if(next===0){
-        control.classList.remove('show');
-        control.setAttribute('aria-hidden','true');
-        select.hidden=false;
-        select.setAttribute('aria-expanded','false');
-      }
-      update();
-    });
-  });
-
-  buy.addEventListener('click',()=>{
-    if(!buy.disabled) window.location.href='form.html';
-  });
-
-  update();
+(()=>{"use strict";
+const KEY="titik-balik-ticket-selection-v1";
+const cards=[...document.querySelectorAll(".ticket-card.sale")];
+const priceEl=document.querySelector(".p-price"),buy=document.querySelector(".buy"),toast=document.querySelector(".toast");
+let toastTimer;
+const format=n=>"Rp"+n.toLocaleString("id-ID");
+const showToast=message=>{toast.textContent=message;toast.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove("show"),1700)};
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(cards.map(c=>({ticket:c.dataset.ticket,qty:Number(c.dataset.qty)||0}))));}catch{}};
+const update=()=>{
+ let total=0,count=0;
+ cards.forEach(card=>{
+  const qty=Math.max(0,Math.min(10,Number(card.dataset.qty)||0));
+  card.querySelector(".qty-value").textContent=String(qty);
+  card.querySelector(".choose").hidden=qty>0;
+  card.querySelector(".qty").hidden=qty===0;
+  total+=qty*Number(card.dataset.price);count+=qty;
+ });
+ priceEl.textContent=format(total||175000);
+ buy.disabled=count===0;buy.classList.toggle("enabled",count>0);
+ buy.textContent=count?`Lanjutkan (${count} Tiket)`:"Beli Sekarang";save();
+};
+const setQty=(card,next)=>{card.dataset.qty=String(Math.max(0,Math.min(10,next)));update()};
+cards.forEach(card=>{
+ card.querySelector(".choose").addEventListener("click",()=>{setQty(card,1);showToast(`${card.dataset.ticket} ditambahkan`)});
+ card.querySelector(".plus").addEventListener("click",()=>setQty(card,(Number(card.dataset.qty)||0)+1));
+ card.querySelector(".minus").addEventListener("click",()=>setQty(card,(Number(card.dataset.qty)||0)-1));
+});
+buy.addEventListener("click",()=>{if(!buy.disabled)window.location.href="form.html"});
+try{
+ const saved=JSON.parse(localStorage.getItem(KEY)||"[]");
+ if(Array.isArray(saved))saved.forEach(item=>{const card=cards.find(c=>c.dataset.ticket===item.ticket);if(card)card.dataset.qty=String(Math.max(0,Math.min(10,Number(item.qty)||0)))});
+}catch{}
+update();
 })();
 </script>
-</body>
-</html>
+</body></html>
