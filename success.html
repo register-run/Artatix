@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Pesanan Diterima | Artatix</title>
+<meta name="theme-color" content="#1e348f">
+<meta name="color-scheme" content="light">
+<meta name="description" content="Pesanan GLORIFEST FESTARIA 2026 diterima. Bukti pembayaran sedang diverifikasi tim Artatix.">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pesanan Diterima | Artatix">
+<meta property="og:description" content="Pesanan GLORIFEST FESTARIA 2026 diterima dan sedang diverifikasi.">
+<meta property="og:image" content="banner.png">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+[hidden]{display:none!important}
+:root{--navy:#1e348f;--blue:#4353e0;--ink:#141b3d;--muted:#9aa1b5;--soft:#657286;--panel:#edf1fb;--line:#e0e5f3;--green:#0e9f56;--green-bg:#e8f9ef;--amber:#8a5a00;--amber-bg:#fff6dc}
+html{-webkit-text-size-adjust:100%}
+body{font-family:'Poppins',sans-serif;background:#fff;color:var(--ink);-webkit-tap-highlight-color:transparent}
+::selection{background:#dfe5fb}
+:focus-visible{outline:3px solid rgba(67,83,224,.35);outline-offset:2px}
+img{display:block}
+button{font-family:inherit}
+.page{max-width:520px;margin:0 auto;padding:0 20px}
+.ic{width:17px;height:17px;flex:none}
+.ic-fill{fill:#fff}
+.ic-line{fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+/* ═══ HEADER & PROGRESS (100%, semua langkah) ═══ */
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{width:40px;height:40px;border-radius:10px}
+.brand strong{font-size:26px;font-weight:800;color:var(--navy);letter-spacing:-.5px}
+.lang{display:inline-flex;align-items:center;gap:8px;background:#f1f3f9;border-radius:999px;padding:9px 16px;font-weight:700;font-size:15px;color:var(--navy)}
+.flag{width:20px;height:20px;border-radius:50%;background:linear-gradient(180deg,#f0483e 0 50%,#fff 50% 100%);box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
+.progress{background:var(--navy);margin:0 -20px;padding:14px 20px 12px}
+.progress-track{height:4px;background:rgba(255,255,255,.18);border-radius:99px;overflow:hidden;margin-bottom:12px}
+.progress-fill{height:100%;background:#fff;border-radius:99px;width:100%}
+.steps{list-style:none;display:flex;align-items:center;gap:8px}
+.step{display:flex;align-items:center;gap:8px;flex:1;justify-content:center}
+.dot{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:13px;color:#fff;border:2px solid rgba(255,255,255,.55);flex:none}
+.step.done .dot{background:rgba(255,255,255,.18);border-color:rgba(255,255,255,.4)}
+.step.active .dot{background:#fff;color:var(--navy);border-color:#fff}
+.step-label{color:#fff;font-weight:600;font-size:12.5px;white-space:nowrap}
+
+main{padding-bottom:44px}
+
+/* ═══ HERO SUKSES (animasi sekali jalan) ═══ */
+.hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding:38px 16px 8px}
+.mark-wrap{width:88px;height:88px;border-radius:50%;background:var(--green-bg);display:grid;place-items:center;box-shadow:0 0 0 10px rgba(14,159,86,.08);animation:pop .45s cubic-bezier(.2,.9,.3,1.4) backwards}
+@keyframes pop{from{transform:scale(0)}}
+.mark{width:56px;height:56px;stroke:var(--green);stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;fill:none}
+.mark-circle{stroke-dasharray:166;stroke-dashoffset:166;animation:draw .55s ease-out .1s forwards}
+.mark-check{stroke-dasharray:48;stroke-dashoffset:48;animation:draw .35s ease-out .55s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.hero h1{font-size:24px;font-weight:800;color:var(--navy);margin-top:20px;letter-spacing:-.4px;animation:rise .45s .15s cubic-bezier(.2,.7,.3,1) backwards}
+.hero p{font-size:14px;line-height:1.7;color:var(--soft);margin-top:8px;max-width:400px;animation:rise .45s .25s cubic-bezier(.2,.7,.3,1) backwards}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+
+.status-pill{display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:9px 18px;border-radius:999px;font-size:13px;font-weight:700;color:var(--amber);background:var(--amber-bg);box-shadow:inset 0 0 0 1.5px rgba(214,158,26,.4);animation:rise .45s .35s cubic-bezier(.2,.7,.3,1) backwards}
+.status-pill i{width:8px;height:8px;border-radius:50%;background:#e3a008}
+
+/* ═══ KARTU PESANAN (gaya tiket) ═══ */
+.summary-card{background:var(--panel);border-radius:22px;padding:16px;margin-top:18px;animation:rise .45s .4s cubic-bezier(.2,.7,.3,1) backwards}
+.summary-card.late{animation-delay:.5s}
+.summary-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:12px}
+.summary-row{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;font-size:14px;color:#3c4257;padding:7px 2px}
+.summary-row strong{font-weight:700;color:var(--ink);text-align:right;word-break:break-word;font-variant-numeric:tabular-nums}
+.order-line{display:flex;align-items:center;gap:8px;font-size:14px}
+.order-line strong{color:var(--navy);letter-spacing:.02em}
+.chip-copy{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border:0;background:var(--blue);color:#fff;border-radius:8px;cursor:pointer;transition:transform .15s,background .2s;touch-action:manipulation;flex:none}
+.chip-copy:active{transform:scale(.9)}
+.chip-copy svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.chip-copy.copied{background:var(--green);box-shadow:0 4px 12px rgba(14,159,86,.35)}
+.summary-total{margin-top:6px;padding:12px 2px 4px;border-top:2px dashed #d7ddf0;font-size:15px;font-weight:600;color:var(--ink);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.summary-total strong{font-size:20px;color:var(--navy);font-variant-numeric:tabular-nums}
+.receipt-line{display:flex;align-items:center;gap:8px;margin-top:10px;padding:9px 12px;background:#fff;border:1px solid var(--line);border-radius:12px;font-size:12.5px;color:var(--soft);word-break:break-all}
+.receipt-line svg{width:15px;height:15px;flex:none;fill:none;stroke:var(--green);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+
+/* ═══ E-TIKET PEMEGANG ═══ */
+.cut{position:relative;border-top:2px dashed #d7ddf0;margin:14px -16px 12px}
+.notch{position:absolute;top:-11px;width:22px;height:22px;border-radius:50%;background:#fff}
+.notch.l{left:-11px}
+.notch.r{right:-11px}
+.etkt{display:flex;align-items:center;gap:12px;padding:10px 2px}
+.etkt-num{width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:700;font-size:14px;flex:none}
+.etkt-name{font-size:14px;font-weight:700}
+.etkt-sub{font-size:11.5px;color:var(--muted);font-weight:500;margin-top:2px}
+.etkt-wait{margin-left:auto;flex:none;font-size:10.5px;font-weight:700;color:var(--amber);background:var(--amber-bg);padding:5px 10px;border-radius:999px}
+
+/* ═══ TOMBOL ═══ */
+.actions{display:grid;gap:10px;margin-top:22px;animation:rise .45s .6s cubic-bezier(.2,.7,.3,1) backwards}
+.btn{width:100%;border:0;border-radius:14px;padding:15px;font-size:16px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;transition:transform .15s,box-shadow .2s;text-decoration:none;touch-action:manipulation;-webkit-user-select:none;user-select:none}
+.btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;transition:transform .2s}
+.btn:hover svg{transform:translateX(3px)}
+.btn:active{transform:scale(.99)}
+.btn-wa{color:#fff;background:linear-gradient(180deg,#18b56a,#0e9f56);box-shadow:0 8px 20px rgba(14,159,86,.32)}
+.btn-wa:hover{box-shadow:0 10px 24px rgba(14,159,86,.42)}
+.btn-home{color:var(--navy);background:#e7ebfc}
+.btn-home:hover{background:#dde4fa}
+.help{text-align:center;font-size:12.5px;color:var(--soft);margin-top:16px}
+.help a{color:var(--blue);font-weight:600;text-decoration:none}
+.help a:hover{text-decoration:underline}
+
+/* ═══ FOOTER ═══ */
+.footer{margin-top:40px;text-align:center;padding-bottom:10px}
+.footer-brand{display:flex;align-items:center;justify-content:center;gap:10px}
+.footer-brand img{width:44px;height:44px;border-radius:10px}
+.footer-brand span{font-size:26px;font-weight:800;color:var(--navy);letter-spacing:-.5px}
+.footer-contact{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:22px}
+.footer-contact a{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink);font-weight:600;font-size:16px;transition:color .15s}
+.footer-contact a:hover{color:var(--blue)}
+.f-ico{width:34px;height:34px;border-radius:50%;background:var(--blue);display:grid;place-items:center;flex:none}
+.footer-sep{border:0;border-top:1px solid #e7eaf3;margin:26px 0 18px}
+.footer-copy{font-size:14px;color:var(--muted);font-weight:500}
+
+/* Toast */
+.toast{position:fixed;left:50%;bottom:36px;transform:translate(-50%,14px) scale(.97);z-index:90;background:#1c2440;color:#fff;font-size:14px;font-weight:500;padding:11px 18px;border-radius:12px;max-width:calc(100vw - 40px);text-align:center;opacity:0;pointer-events:none;box-shadow:0 12px 30px rgba(0,0,0,.28);transition:opacity .25s,transform .25s}
+.toast.show{opacity:1;transform:translate(-50%,0) scale(1)}
+
+@media (max-width:430px){.step-label{display:none}.step.active .step-label{display:inline}.brand strong{font-size:22px}.hero h1{font-size:21px}}
+/* Cetak / Simpan PDF: bersih tanpa navigasi */
+@media print{.topbar,.progress,.actions,.help,.footer,.toast{display:none!important}body{background:#fff}main{padding-bottom:0}.summary-card,.summary-card.late{animation:none;box-shadow:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="page">
+<header class="topbar"><a class="brand" href="index.html" aria-label="Artatix beranda"><img src="logo.png" alt="" width="40" height="40" decoding="async"><strong>Artatix</strong></a><span class="lang"><span class="flag" aria-hidden="true"></span>ID</span></header>
+<nav class="progress" aria-label="Langkah pemesanan"><div class="progress-track"><div class="progress-fill"></div></div><ol class="steps"><li class="step done"><span class="dot">✓</span><span class="step-label">Pilih Kategori</span></li><li class="step done"><span class="dot">✓</span><span class="step-label">Data Pembeli</span></li><li class="step done"><span class="dot">✓</span><span class="step-label">Pembayaran</span></li><li class="step active" aria-current="step"><span class="dot">4</span><span class="step-label">E-Ticket</span></li></ol></nav>
+
+<main>
+<div class="hero">
+<div class="mark-wrap"><svg class="mark" viewBox="0 0 56 56" aria-hidden="true"><circle class="mark-circle" cx="28" cy="28" r="25"/><path class="mark-check" d="M16 29l8.5 8.5L41 20"/></svg></div>
+<h1>Pesanan Diterima!</h1>
+<p>Terima kasih! Bukti pembayaranmu sudah kami terima dan saat ini sedang diverifikasi oleh tim Artatix. E-tiket akan dikirim ke e-mail kamu setelah verifikasi selesai.</p>
+<span class="status-pill"><i aria-hidden="true"></i>Menunggu Verifikasi • maks. 1×24 jam</span>
+</div>
+
+<section class="summary-card" aria-label="Detail pesanan">
+<div class="summary-title">Detail Pesanan</div>
+<div class="summary-row order-line"><span>Order ID</span><span style="display:inline-flex;align-items:center;gap:8px"><strong id="orderId">-</strong><button class="chip-copy" id="copyOrder" type="button" aria-label="Salin Order ID"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button></span></div>
+<div class="summary-row"><span>Nama Pemesan</span><strong id="nama">-</strong></div>
+<div class="summary-row"><span>Tanggal Pesanan</span><strong id="tanggal">-</strong></div>
+<div class="summary-row"><span>Jenis Tiket</span><strong id="jenis">-</strong></div>
+<div class="summary-row"><span>Jumlah Tiket</span><strong id="jumlah">0</strong></div>
+<div class="summary-total"><span>Total Pembayaran</span><strong id="total">Rp0</strong></div>
+<div class="receipt-line" id="receiptLine" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span id="receiptName"></span></div>
+</section>
+
+<section class="summary-card late" aria-label="Pemegang tiket" id="holderSection">
+<div class="summary-title">Pemegang Tiket</div>
+<div class="cut"><span class="notch l"></span><span class="notch r"></span></div>
+<div id="holderList"></div>
+</section>
+
+<div class="actions">
+<a class="btn btn-wa" id="waBtn" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5Z"/></svg>Konfirmasi via WhatsApp</a>
+<button class="btn btn-home" id="homeBtn" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/></svg>Kembali ke Beranda</button>
+</div>
+<p class="help">Butuh bantuan? Hubungi <a href="tel:+6282137676220">+62 821-3767-6220</a> atau <a href="mailto:cs@artatix.co.id">cs@artatix.co.id</a></p>
+
+<footer class="footer"><div class="footer-brand"><img src="logo.png" alt="" width="44" height="44" loading="lazy" decoding="async"><span>Artatix</span></div><div class="footer-contact"><a href="tel:+6282137676220"><span class="f-ico"><svg class="ic ic-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.85 21 3 13.15 3 3a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.24.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2Z"/></svg></span>+62 821-3767-6220</a><a href="mailto:cs@artatix.co.id"><span class="f-ico"><svg class="ic ic-line" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>cs@artatix.co.id</a></div><hr class="footer-sep"><p class="footer-copy">© 2026 Artatix. Hak Cipta Dilindungi.</p></footer>
+</main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+(() => {
+  'use strict';
+
+  /* Key TIDAK diubah → kompatibel qris.html */
+  const KEY = { order: 'gf_order_v1', orderId: 'gf_order_id', payment: 'gf_payment_v1' };
+  /* Keranjang dibersihkan; data pesanan DIPERTAHANKAN agar refresh aman */
+  const CLEANUP = ['gf_selection_v1', 'gf_checkout_items_v1', 'gf_total_qty', 'gf_total_price', 'gf_draft_v1', 'gf_payment_deadline'];
+  const WA_CS = '6282137676220';
+
+  const $ = id => document.getElementById(id);
+  const nf = new Intl.NumberFormat('id-ID');
+  const fmt = n => 'Rp' + nf.format(Math.round(n));
+  const dateFmt = new Intl.DateTimeFormat('id-ID', { dateStyle: 'long', timeStyle: 'short' });
+
+  let order = null, payment = null;
+  try { order = JSON.parse(localStorage.getItem(KEY.order) || 'null'); } catch (e) {}
+  try { payment = JSON.parse(localStorage.getItem(KEY.payment) || 'null'); } catch (e) {}
+
+  if (!order || !order.cart || !Array.isArray(order.cart.items) || !order.cart.items.length) {
+    location.replace('tiket.html');
+    return;
+  }
+
+  const orderId = localStorage.getItem(KEY.orderId) || '-';
+  const total = Number(order.cart.totalPrice) || 0;
+
+  /* ═══ ISI DATA ═══ */
+  $('orderId').textContent = orderId;
+  $('nama').textContent = order.nama || '-';
+  const created = order.createdAt ? new Date(order.createdAt) : null;
+  $('tanggal').textContent = created && !isNaN(created) ? dateFmt.format(created) : '-';
+  $('jenis').textContent = order.cart.items.map(i => i.jenis + ' (x' + i.qty + ')').join(', ');
+  $('jumlah').textContent = order.cart.totalQty;
+  $('total').textContent = fmt(total);
+
+  if (payment && payment.receipt && payment.receipt.name) {
+    $('receiptName').textContent = 'Bukti pembayaran: ' + payment.receipt.name;
+    $('receiptLine').hidden = false;
+  }
+
+  /* Pemegang tiket (jika data ada) */
+  const holders = Array.isArray(order.holders) ? order.holders : [];
+  if (holders.length) {
+    const frag = document.createDocumentFragment();
+    holders.forEach(h => {
+      const row = document.createElement('div');
+      row.className = 'etkt';
+      const num = document.createElement('span');
+      num.className = 'etkt-num';
+      num.textContent = String(h.number || '');
+      const box = document.createElement('div');
+      const nm = document.createElement('div');
+      nm.className = 'etkt-name';
+      nm.textContent = h.nama || '-';
+      const sub = document.createElement('div');
+      sub.className = 'etkt-sub';
+      sub.textContent = h.ticketName || '';
+      box.append(nm, sub);
+      const wait = document.createElement('span');
+      wait.className = 'etkt-wait';
+      wait.textContent = 'Menunggu';
+      row.append(num, box, wait);
+      frag.appendChild(row);
+    });
+    $('holderList').appendChild(frag);
+  } else {
+    $('holderSection').hidden = true;
+  }
+
+  /* ═══ TOMBOL WHATSAPP (prefill Order ID) ═══ */
+  const waText = encodeURIComponent('Halo Artatix! Saya ingin konfirmasi pembayaran pesanan ' + orderId + ' (GLORIFEST FESTARIA 2026), total ' + fmt(total) + '. Terima kasih.');
+  $('waBtn').href = 'https://wa.me/' + WA_CS + '?text=' + waText;
+
+  $('homeBtn').addEventListener('click', () => location.assign('index.html'));
+
+  /* ═══ SALIN ORDER ID (feedback hijau, senada qris.html) ═══ */
+  const toast = $('toast');
+  let toastTimer = null;
+  const notify = msg => {
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 2400);
+  };
+
+  const copyBtn = $('copyOrder');
+  copyBtn.addEventListener('click', async () => {
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(orderId);
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = orderId;
+        ta.setAttribute('readonly', '');
+        ta.style.cssText = 'position:fixed;opacity:0;pointer-events:none';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        ta.remove();
+      }
+      notify('Order ID berhasil disalin');
+      copyBtn.classList.add('copied');
+      setTimeout(() => copyBtn.classList.remove('copied'), 1400);
+    } catch (e) {
+      notify('Gagal menyalin Order ID');
+    }
+  });
+
+  /* ═══ BERSIHKAN KERANJANG (setelah render) ═══ */
+  CLEANUP.forEach(k => { try { localStorage.removeItem(k); } catch (e) {} });
+})();
+</script>
+</body>
+</html>
